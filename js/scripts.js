@@ -144,7 +144,6 @@ function repeat() {
         if (!answerGiven) {
             document.getElementById('feedback_img').src = 'pictures/questionmark.png';
         }
-        document.getElementById('footer_box').innerHTML = firstTone + ' ' + secondTone;
     }
 }
 
@@ -242,7 +241,6 @@ function next() {
         buttonDelay = (2*toneLength+pauseLength)*1000;
         localStorage.setItem('firstTone', firstTone);
         localStorage.setItem('secondTone', secondTone);
-        document.getElementById('footer_box').innerHTML = firstTone + ' ' + secondTone;
     }
 }
 
