@@ -256,7 +256,7 @@ function toneLengthSliderInput() {
 
 function toneLengthFieldInput(min, max) {
     var input = document.getElementById('tone_length_input_field').value;
-    if ((input > min) && (input < max)) {
+    if ((input >= min) && (input <= max)) {
         document.getElementById('tone_length_slider').value = document.getElementById('tone_length_input_field').value;
         localStorage.setItem('toneLength', document.getElementById('tone_length_input_field').value);
     } else {
