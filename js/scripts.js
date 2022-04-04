@@ -290,58 +290,18 @@ function dropdownWaveformInput() {
     localStorage.setItem('waveform', document.getElementById('dropdown_waveform').value);
 }
 
-function buttonLevel1() {
-    localStorage.setItem('toneLength', '1.0');
-    localStorage.setItem('pauseLength', '0.0');
-    localStorage.setItem('equalTones', false);
-    localStorage.setItem('intervalSize', '50');
-    document.getElementById('tone_length_slider').value = 1;
-    document.getElementById('tone_length_input_field').value = 1;
-    document.getElementById('pause_length_slider').value = 0;
-    document.getElementById('pause_length_display').innerHTML = '0';
-    document.getElementById('checkbox_equal_tones').checked = false;
-    document.getElementById('dropdown_interval_size').value = '50';
+function levelButton(pToneLength, pPauseLength, pEqualTones, pIntervalSize) {
+    localStorage.setItem('toneLength', pToneLength);
+    localStorage.setItem('pauseLength', pPauseLength);
+    localStorage.setItem('equalTones', pEqualTones);
+    localStorage.setItem('intervalSize', pIntervalSize);
+    document.getElementById('tone_length_slider').value = pToneLength;
+    document.getElementById('tone_length_input_field').value = pToneLength;
+    document.getElementById('pause_length_slider').value = pPauseLength;
+    document.getElementById('pause_length_display').innerHTML = pPauseLength;
+    document.getElementById('checkbox_equal_tones').checked = pEqualTones;
+    document.getElementById('dropdown_interval_size').value = pIntervalSize;
 }
-
-function buttonLevel2() {
-    localStorage.setItem('toneLength', '1.0');
-    localStorage.setItem('pauseLength', '0.3');
-    localStorage.setItem('equalTones', false);
-    localStorage.setItem('intervalSize', '30');
-    document.getElementById('tone_length_slider').value = 1;
-    document.getElementById('tone_length_input_field').value = 1;
-    document.getElementById('pause_length_slider').value = 0.3;
-    document.getElementById('pause_length_display').innerHTML = '0.3';
-    document.getElementById('checkbox_equal_tones').checked = false;
-    document.getElementById('dropdown_interval_size').value = '30';
-}
-
-function buttonLevel3() {
-    localStorage.setItem('toneLength', '0.8');
-    localStorage.setItem('pauseLength', '0.6');
-    localStorage.setItem('equalTones', true);
-    localStorage.setItem('intervalSize', '20');
-    document.getElementById('tone_length_slider').value = 0.8;
-    document.getElementById('tone_length_input_field').value = 0.8;
-    document.getElementById('pause_length_slider').value = 0.6;
-    document.getElementById('pause_length_display').innerHTML = '0.6';
-    document.getElementById('checkbox_equal_tones').checked = true;
-    document.getElementById('dropdown_interval_size').value = '20';
-}
-
-function buttonLevel4() {
-    localStorage.setItem('toneLength', '0.7');
-    localStorage.setItem('pauseLength', '1.0');
-    localStorage.setItem('equalTones', true);
-    localStorage.setItem('intervalSize', '10');
-    document.getElementById('tone_length_slider').value = 0.7;
-    document.getElementById('tone_length_input_field').value = 0.7;
-    document.getElementById('pause_length_slider').value = 1;
-    document.getElementById('pause_length_display').innerHTML = '1';
-    document.getElementById('checkbox_equal_tones').checked = true;
-    document.getElementById('dropdown_interval_size').value = '10';
-}
-
 
 // keyboard shortcuts
 
