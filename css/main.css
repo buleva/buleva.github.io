@@ -6,7 +6,7 @@
 }
 
 html {
-    background-color: #59B99D;
+    background-color: #white;
 }
 
 
@@ -171,6 +171,10 @@ html {
 
 @media (prefers-color-scheme: dark) {
     #left_box, #right_box {
+        background-color: #282b30;
+    }
+
+    html {
         background-color: #282b30;
     }
 }
