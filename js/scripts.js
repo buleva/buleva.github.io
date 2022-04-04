@@ -117,8 +117,10 @@ function showCorrectAnswer() {
     } else {
         document.getElementById('feedback_img').src = 'pictures/higher.png';
     }
-    soundeffectWrong.volume = localStorage.getItem('volume')/100;
-    soundeffectWrong.play();
+    if (localStorage.getItem('soundeffects')=='true') {
+        soundeffectWrong.volume = localStorage.getItem('volume')/100;
+        soundeffectWrong.play();
+    }
 }
 
 
@@ -258,7 +260,7 @@ function toneLengthFieldInput(min, max) {
         document.getElementById('tone_length_slider').value = document.getElementById('tone_length_input_field').value;
         localStorage.setItem('toneLength', document.getElementById('tone_length_input_field').value);
     } else {
-        alert('please enter a value between 0.1 and 5')
+        alert('please enter a value between 0.1 and 5');
     }
 }
 
