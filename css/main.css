@@ -176,6 +176,9 @@ html {
     html {
         background-color: #282b30;
     }
+    #settings_img, #info_img {
+        filter: invert(1);
+    }
 }
 
 @media screen and (max-width: 600px) {
