@@ -139,12 +139,21 @@ html {
 }
 
 /* settings */
-#container_settings {
+#container_settings_exercise {
     grid-template-areas:
         'left header right'
         'left level right'
         'left settings right'
         'left footer right';
+    grid-template-rows: 2fr 2fr 4fr 1fr;
+}
+
+#container_settings_menu {
+    grid-template-areas: 
+    'left header right'
+    'left settings right'
+    'left settings right'
+    'left footer right';
     grid-template-rows: 2fr 2fr 4fr 1fr;
 }
 
