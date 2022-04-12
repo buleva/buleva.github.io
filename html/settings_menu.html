@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html> 
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="../css/main.css" rel='stylesheet'>
+        <script src='../js/scripts.js'></script>
+    </head>
+    <body onload="onloadSettingsMenu()">
+        <div class='grid_container' id='container_settings'>
+            <div class='grid_box' id='header_box'>
+                <a href='../index.html'><img class='nav_img' id='settings_img' src='../pictures/gear.png' alt='settings'/></a>
+                <a href='info_menu.html'><img class='nav_img' id='info_img' src='../pictures/info_invert.png' alt='info'/></a>
+                <a href='../index.html'><img id='logo_img' src='../pictures/pitch_logo.png' alt='pitch_logo'/></a>
+            </div>
+            <div class='grid_box' id='left_box'></div>
+            <div class='grid_box' id="level_box">
+                <button class='button' onclick='levelButton(1, 0.3, false, 50)'>level1</button>
+                <button class='button' onclick='levelButton(1, 0.5, false, 30)'>level2</button>
+                <button class='button' onclick='levelButton(0.8, 0.7, true, 20)'>level3</button>
+                <button class='button' onclick='levelButton(0.7, 1, true, 10)'>level4</button>
+            </div>
+            <div class='grid_box' id="settings_box">
+                <div class="column">
+                    <div class='slidecontainer'>
+                        <p>volume: </p><p id='volume_display'>1</p>
+                        <input class='slider' id='volume_slider' type='range' min='0' max='100' step='1' oninput='volumeSliderInput()'>
+                    </div>
+                </div>
+                <div class="column">    
+                    <div class='switchcontainer'>
+                        <p>play soundeffects</p>
+                        <input id='checkbox_soundeffects' type="checkbox" oninput='soundeffectCheckboxInput()'>
+                    </div>
+                </div>
+            </div>
+            <div class='grid_box' id='right_box'></div>
+            <div class='grid_box' id='footer_box'></div>
+        </div>
+    </body>
+</html>
