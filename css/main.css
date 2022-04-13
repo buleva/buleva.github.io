@@ -145,7 +145,6 @@ html {
         'left level right'
         'left settings right'
         'left footer right';
-    grid-template-rows: 2fr 2fr 4fr 1fr;
 }
 
 #container_settings_menu {
@@ -154,7 +153,6 @@ html {
     'left settings right'
     'left settings right'
     'left footer right';
-    grid-template-rows: 2fr 2fr 4fr 1fr;
 }
 
 #level_box {
@@ -201,7 +199,7 @@ html {
 }
 
 @media (orientation: portrait) {
-    #container_index, #container_settings, #container_info {
+    .grid_container {
         grid-template-columns: 0fr auto 0fr;}
     #left_box {
         display: none;}
