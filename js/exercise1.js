@@ -149,7 +149,6 @@ function toneLengthFieldInput(min, max) {
         alert('please enter a value between 0.1 and 5');
     }
 }
-
 function pauseLengthSliderInput() {
     var input = document.getElementById('pause_length_slider').value;
     document.getElementById('pause_length_display').innerHTML = input;
@@ -273,6 +272,16 @@ document.addEventListener('keydown', function(key) {
 
 document.addEventListener('keydown', function(key) {
     if (key.keyCode == 53) {
+        if (currentHTMLFile=='Exercise') {
+            if (localStorage.getItem('equalTonesEx1')=='true') {
+                nextExercise1();
+            }        
+        }
+    }
+});
+
+document.addEventListener('keydown', function(key) {
+    if (key.keyCode == 32) {
         if (currentHTMLFile=='Exercise') {
             if (localStorage.getItem('equalTonesEx1')=='true') {
                 nextExercise1();

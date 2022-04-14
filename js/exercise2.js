@@ -253,3 +253,13 @@ document.addEventListener('keydown', function(key) {
         }
     }
 });
+
+document.addEventListener('keydown', function(key) {
+    if (key.keyCode == 32) {
+        if (currentHTMLFile=='Exercise') {
+            if (localStorage.getItem('equalTonesEx2')=='true') {
+                nextExercise2();
+            }        
+        }
+    }
+});

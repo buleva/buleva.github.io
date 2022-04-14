@@ -96,6 +96,7 @@ html {
 
 #menu_box {
     display: flex;
+    justify-content: space-around;
     grid-area: menu;
 }
 
@@ -104,8 +105,10 @@ html {
     text-align: center;
     border: solid 4px black;
     border-radius: 15px;
-    min-width: 200px;
-    min-height: 100px;
+    width: 40%;
+    height: 20%;
+    min-width: 150px;
+    min-height: 75px;
     margin: 10px;
 }
 
@@ -145,6 +148,7 @@ html {
         'left level right'
         'left settings right'
         'left footer right';
+        grid-template-rows: 2fr 2fr 4fr 1fr;
 }
 
 #container_settings_menu {
@@ -200,7 +204,7 @@ html {
 
 @media (orientation: portrait) {
     .grid_container {
-        grid-template-columns: 0fr auto 0fr;}
+        grid-template-columns: 0fr 100vw 0fr;}
     #left_box {
         display: none;}
     #right_box {
