@@ -27,7 +27,7 @@ function onloadSettings() {
     document.getElementById('tone_length_slider').value = localStorage.getItem('toneLengthEx2');
     document.getElementById('tone_length_input_field').value = document.getElementById('tone_length_slider').value;
     document.getElementById('volume_slider').value = localStorage.getItem('volume');
-    document.getElementById('volume_display').innerHTML = document.getElementById('volume_slider').value;
+    document.getElementById('volume_input_field').value = localStorage.getItem('volume');
     isChecked = localStorage.getItem('equalTonesEx2');
     isTrue = isChecked == 'true';
     document.getElementById('checkbox_equal_tones').checked = isTrue;
@@ -129,6 +129,7 @@ function toneLengthFieldInput(min, max) {
         document.getElementById('tone_length_slider').value = input;
         localStorage.setItem('toneLengthEx2', input);
     } else {
+        document.getElementById('tone_length_input_field').value = localStorage.getItem('toneLengthEx2');
         alert('please enter a value between 0.1 and 5');
     }
 }

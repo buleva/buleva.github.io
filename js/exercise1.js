@@ -30,9 +30,9 @@ function onloadSettings() {
     document.getElementById('tone_length_slider').value = localStorage.getItem('toneLengthEx1');
     document.getElementById('tone_length_input_field').value = document.getElementById('tone_length_slider').value;
     document.getElementById('pause_length_slider').value = localStorage.getItem('pauseLengthEx1');
-    document.getElementById('pause_length_display').innerHTML = document.getElementById('pause_length_slider').value;
+    document.getElementById('pause_length_input_field').value = document.getElementById('pause_length_slider').value;
     document.getElementById('volume_slider').value = localStorage.getItem('volume');
-    document.getElementById('volume_display').innerHTML = document.getElementById('volume_slider').value;
+    document.getElementById('volume_input_field').value = localStorage.getItem('volume');
     isChecked = localStorage.getItem('equalTonesEx1');
     isTrue = isChecked == 'true';
     document.getElementById('checkbox_equal_tones').checked = isTrue;
@@ -146,13 +146,26 @@ function toneLengthFieldInput(min, max) {
         document.getElementById('tone_length_slider').value = input;
         localStorage.setItem('toneLengthEx1', input);
     } else {
+        document.getElementById('tone_length_input_field').value = localStorage.getItem('toneLengthEx1');
         alert('please enter a value between 0.1 and 5');
     }
 }
+
 function pauseLengthSliderInput() {
     var input = document.getElementById('pause_length_slider').value;
-    document.getElementById('pause_length_display').innerHTML = input;
+    document.getElementById('pause_length_input_field').value = input;
     localStorage.setItem('pauseLengthEx1', input);
+}
+
+function pauseLengthFieldInput(min, max) {
+    var input = document.getElementById('pause_length_input_field').value;
+    if ((input >= min) && (input <= max)) {
+        document.getElementById('pause_length_slider').value = input;
+        localStorage.setItem('pauseLengthEx1', input);
+    } else {
+        document.getElementById('pause_length_input_field').value = localStorage.getItem('pauseLengthEx1');
+        alert('please enter a value between 0 and 2');
+    }
 }
 
 function equalTonesCheckboxInput() {
@@ -175,7 +188,7 @@ function levelButton(pToneLength, pPauseLength, pEqualTones, pIntervalSize) {
     document.getElementById('tone_length_slider').value = pToneLength;
     document.getElementById('tone_length_input_field').value = pToneLength;
     document.getElementById('pause_length_slider').value = pPauseLength;
-    document.getElementById('pause_length_display').innerHTML = pPauseLength;
+    document.getElementById('pause_length_input_field').value = pPauseLength;
     document.getElementById('checkbox_equal_tones').checked = pEqualTones;
     document.getElementById('dropdown_interval_size').value = pIntervalSize;
 }

@@ -18,7 +18,7 @@ function onloadSettingsMenu() {
     var isTrue;
     var isChecked;
     document.getElementById('volume_slider').value = localStorage.getItem('volume');
-    document.getElementById('volume_display').innerHTML = document.getElementById('volume_slider').value;
+    document.getElementById('volume_input_field').value = localStorage.getItem('volume');
     isChecked = localStorage.getItem('soundeffects');
     isTrue = isChecked == 'true';
     document.getElementById('checkbox_soundeffects').checked = isTrue;
@@ -112,8 +112,19 @@ function playCorrectSoundeffect() {
 // settings
 function volumeSliderInput() {
     var input = document.getElementById('volume_slider').value;
-    document.getElementById('volume_display').innerHTML = input;
+    document.getElementById('volume_input_field').value = input;
     localStorage.setItem('volume', input);
+}
+
+function volumeFieldInput(min, max) {
+    var input = document.getElementById('volume_input_field').value;
+    if ((input >= min) && (input <= max)) {
+        document.getElementById('volume_slider').value = input;
+        localStorage.setItem('volume', input);
+    } else {
+        document.getElementById('volume_input_field').value = localStorage.getItem('volume');
+        alert('please enter a value between 0 and 100');
+    }
 }
 
 function soundeffectCheckboxInput() {
