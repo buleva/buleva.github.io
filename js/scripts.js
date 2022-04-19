@@ -9,7 +9,6 @@ var soundeffectCorrect = new Audio('../sounds/correct.wav');
 var soundeffectWrong = new Audio('../sounds/wrong.wav');
 
 // onload functions
-//TODO fix onload functions for new html files
 function onloadMenu() {
     currentHTMLFile = 'Menu';
 }

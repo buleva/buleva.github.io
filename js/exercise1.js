@@ -10,7 +10,6 @@ var currentHTMLFile;
 var soundeffectCorrect;
 var soundeffectWrong;
 
-//TODO update settings function
 
 // onload 
 function onloadEx() {

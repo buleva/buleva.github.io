@@ -96,8 +96,9 @@ html {
 
 #menu_box {
     display: flex;
-    justify-content: space-around;
     grid-area: menu;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 }
 
 .menu_exercise_box {
@@ -107,9 +108,9 @@ html {
     border-radius: 15px;
     width: 40%;
     height: 20%;
-    min-width: 150px;
-    min-height: 75px;
-    margin: 10px;
+    min-width: 300px;
+    min-height: 150px;
+    margin: 15px;
 }
 
 .div_link {
