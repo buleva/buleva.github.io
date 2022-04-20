@@ -130,7 +130,7 @@ function toneLengthFieldInput(min, max) {
         localStorage.setItem('toneLengthEx2', input);
     } else {
         document.getElementById('tone_length_input_field').value = localStorage.getItem('toneLengthEx2');
-        alert('please enter a value between 0.1 and 5');
+        alert('please enter a value between '+min+' and '+max);
     }
 }
 

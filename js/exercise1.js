@@ -146,7 +146,7 @@ function toneLengthFieldInput(min, max) {
         localStorage.setItem('toneLengthEx1', input);
     } else {
         document.getElementById('tone_length_input_field').value = localStorage.getItem('toneLengthEx1');
-        alert('please enter a value between 0.1 and 5');
+        alert('please enter a value between '+min+' and '+max);
     }
 }
 
@@ -163,7 +163,7 @@ function pauseLengthFieldInput(min, max) {
         localStorage.setItem('pauseLengthEx1', input);
     } else {
         document.getElementById('pause_length_input_field').value = localStorage.getItem('pauseLengthEx1');
-        alert('please enter a value between 0 and 2');
+        alert('please enter a value between '+min+' and '+max);
     }
 }
 

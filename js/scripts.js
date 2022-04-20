@@ -122,7 +122,7 @@ function volumeFieldInput(min, max) {
         localStorage.setItem('volume', input);
     } else {
         document.getElementById('volume_input_field').value = localStorage.getItem('volume');
-        alert('please enter a value between 0 and 100');
+        alert('please enter a value between '+min+' and '+max);
     }
 }
 
