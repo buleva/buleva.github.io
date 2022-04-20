@@ -1,3 +1,4 @@
+/*TODO bring css file in order
 /* sitewide */
 * {
     box-sizing: border-box;
@@ -171,17 +172,21 @@ html {
     display: flex;
     grid-area: settings;
     flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.settings_element_box {
+    width: 40%;
+    min-width: 300px;
+    margin: 10px;
+    font-size: 15px;
+    text-align: center;
 }
 
 #feedback_img {
     max-width: 70%;
     height: auto;
     max-height: 80%;
-}
-
-.column {
-    flex: 50%;
-    max-width: 50%;
 }
 
 /* info */
@@ -227,8 +232,5 @@ html {
 }
 
 @media screen and (max-width: 600px) {
-    .column {
-        flex: 100%;
-        max-width: 100%;
-    }
+
 }
