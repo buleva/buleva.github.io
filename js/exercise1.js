@@ -42,6 +42,7 @@ function onloadSettings() {
     document.getElementById('dropdown_waveform').value = localStorage.getItem('waveformEx1');
 }
 
+//TODO put in script.js 
 function playExercise1(freq, type, start, stop, fadeInTime, fadeOutTime) {
     const osc = audioContext.createOscillator();
     const gainNode = audioContext.createGain();

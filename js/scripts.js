@@ -8,6 +8,8 @@ var currentHTMLFile;
 var soundeffectCorrect = new Audio('../sounds/correct.wav');
 var soundeffectWrong = new Audio('../sounds/wrong.wav');
 
+//TODO error when volume at zero
+
 // onload functions
 function onloadMenu() {
     currentHTMLFile = 'Menu';
