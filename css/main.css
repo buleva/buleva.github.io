@@ -1,4 +1,3 @@
-/*TODO bring css file in order
 /* sitewide */
 * {
     box-sizing: border-box;
@@ -10,13 +9,19 @@ html {
     background-color: white;
 }
 
-
-/* grid boxes */
+/* grid box layout */
 .grid_container {
     height: 100vh;
     display: grid;
     grid-template-columns: 1fr 100vh 1fr;
     grid-template-rows: 2fr 4fr 2fr 1fr;
+}
+
+.grid_box {
+    justify-content: center;
+    align-items: center;
+    background-color: #59B99D;
+    color: white;
 }
 
 #header_box {
@@ -38,13 +43,6 @@ html {
 
 #footer_box {
     grid-area: footer;
-}
-
-.grid_box {
-    justify-content: center;
-    align-items: center;
-    background-color: #59B99D;
-    color: white;
 }
 
 
@@ -74,20 +72,9 @@ html {
     margin-right: auto;
 }
 
-.button {
-    color: #ffffff;
-    background-color: darkgrey;
-    padding: 5px;
-    border-radius: 7px;
-    width: 15%;
-    height: 20%;
-    min-width: 50px;
-    min-height: 30px;
-}
-
 
 /* index */
-#container_index {
+#container_menu {
     grid-template-areas: 
         'left header right'
         'left menu right'
@@ -138,10 +125,28 @@ html {
     grid-area: feedback;
 }
 
+#feedback_img {
+    max-width: 70%;
+    height: auto;
+    max-height: 80%;
+}
+
 #button_box {
     display: flex;
     grid-area: buttons;
     justify-content: space-evenly;
+}
+
+.button {
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    background-color: #59B99D;
+    padding: 5px;
+    border-radius: 10px;
+    width: 15%;
+    height: 20%;
+    min-width: 50px;
+    min-height: 30px;
 }
 
 /* settings */
@@ -183,10 +188,8 @@ html {
     text-align: center;
 }
 
-#feedback_img {
-    max-width: 70%;
-    height: auto;
-    max-height: 80%;
+.slider {
+    width: 90%; 
 }
 
 /* info */
@@ -204,11 +207,7 @@ html {
 }
 
 
-/* adaptive design */
-@media (orientation: landscape) {
-    
-}
-
+/* adaptive design - portait mode*/
 @media (orientation: portrait) {
     .grid_container {
         grid-template-columns: 0fr 100vw 0fr;}
@@ -218,11 +217,11 @@ html {
         display: none;}
 }
 
+/* darkmode */
 @media (prefers-color-scheme: dark) {
     #left_box, #right_box {
         background-color: #282b30;
     }
-
     html {
         background-color: #282b30;
     }
@@ -231,6 +230,14 @@ html {
     }
 }
 
-@media screen and (max-width: 600px) {
-
+/* desktop */
+@media (pointer: fine) {
+    .button:hover {
+        color: #59B99D;
+        background-color: #ffffff;
+    }
+    .button:active {
+        background-color: #e6e6e6;
+        border: #e6e6e6;
+    }
 }
