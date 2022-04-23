@@ -20,9 +20,70 @@ function onloadEx() {
     }
 }
 
+//TODO remember current level button and change css
+function updateLevelButtons() {
+    var button1 = document.getElementById('level1');
+    var button2 = document.getElementById('level2');
+    var button3 = document.getElementById('level3');
+    var button4 = document.getElementById('level4');
+    switch (localStorage.getItem('currentLevelEx2')) {
+        case '0':
+            button1.style.backgroundColor = '';
+            button1.style.color = '';
+            button2.style.backgroundColor = '';
+            button2.style.color = '';
+            button3.style.backgroundColor = '';
+            button3.style.color = '';
+            button4.style.backgroundColor = '';
+            button4.style.color = '';
+            break;
+        case '1':
+            button1.style.backgroundColor = '#ffffff';
+            button1.style.color = '#59B99D';
+            button2.style.backgroundColor = '';
+            button2.style.color = '';
+            button3.style.backgroundColor = '';
+            button3.style.color = '';
+            button4.style.backgroundColor = '';
+            button4.style.color = '';
+            break;
+        case '2':
+            button1.style.backgroundColor = '';
+            button1.style.color = '';
+            button2.style.backgroundColor = '#ffffff';
+            button2.style.color = '#59B99D';
+            button3.style.backgroundColor = '';
+            button3.style.color = '';
+            button4.style.backgroundColor = '';
+            button4.style.color = '';
+            break;
+        case '3':
+            button1.style.backgroundColor = '';
+            button1.style.color = '';
+            button2.style.backgroundColor = '';
+            button2.style.color = '';
+            button3.style.backgroundColor = '#ffffff';
+            button3.style.color = '#59B99D';
+            button4.style.backgroundColor = '';
+            button4.style.color = '';
+            break;
+        case '4':
+            button1.style.backgroundColor = '';
+            button1.style.color = '';
+            button2.style.backgroundColor = '';
+            button2.style.color = '';
+            button3.style.backgroundColor = '';
+            button3.style.color = '';
+            button4.style.backgroundColor = '#ffffff';
+            button4.style.color = '#59B99D';
+            break;
+        }
+}
+
 function onloadSettings() {
     var isChecked;
     var isTrue;
+    updateLevelButtons();
     currentHTMLFile = 'Settings';
     document.getElementById('tone_length_slider').value = localStorage.getItem('toneLengthEx2');
     document.getElementById('tone_length_input_field').value = document.getElementById('tone_length_slider').value;
@@ -121,6 +182,8 @@ function toneLengthSliderInput() {
     var input = document.getElementById('tone_length_slider').value;
     document.getElementById('tone_length_input_field').value = input;
     localStorage.setItem('toneLengthEx2', input);
+    localStorage.setItem('currentLevelEx2', 0);
+    updateLevelButtons();
 }
 
 function toneLengthFieldInput(min, max) {
@@ -128,6 +191,8 @@ function toneLengthFieldInput(min, max) {
     if ((input >= min) && (input <= max)) {
         document.getElementById('tone_length_slider').value = input;
         localStorage.setItem('toneLengthEx2', input);
+        localStorage.setItem('currentLevelEx2', 0);
+        updateLevelButtons();
     } else {
         document.getElementById('tone_length_input_field').value = localStorage.getItem('toneLengthEx2');
         alert('please enter a value between '+min+' and '+max);
@@ -136,24 +201,30 @@ function toneLengthFieldInput(min, max) {
 
 function equalTonesCheckboxInput() {
     localStorage.setItem('equalTonesEx2', document.getElementById('checkbox_equal_tones').checked);
+    localStorage.setItem('currentLevelEx2', 0);
+    updateLevelButtons();
 }
 
 function dropdownIntervalSizeInput() {
     localStorage.setItem('intervalSizeEx2', document.getElementById('dropdown_interval_size').value);
+    localStorage.setItem('currentLevelEx2', 0);
+    updateLevelButtons();
 }
 
 function dropdownWaveformInput() {
     localStorage.setItem('waveformEx2', document.getElementById('dropdown_waveform').value);
 }
 
-function levelButton(pToneLength, pEqualTones, pIntervalSize) {
+function levelButton(pToneLength, pEqualTones, pIntervalSize, plevel) {
     localStorage.setItem('toneLengthEx2', pToneLength);
     localStorage.setItem('equalTonesEx2', pEqualTones);
     localStorage.setItem('intervalSizeEx2', pIntervalSize);
+    localStorage.setItem('currentLevelEx2', plevel);
     document.getElementById('tone_length_slider').value = pToneLength;
     document.getElementById('tone_length_input_field').value = pToneLength;
     document.getElementById('checkbox_equal_tones').checked = pEqualTones;
     document.getElementById('dropdown_interval_size').value = pIntervalSize;
+    updateLevelButtons();
 }
 
 // answer buttons

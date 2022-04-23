@@ -22,9 +22,69 @@ function onloadEx() {
     }
 }
 
+function updateLevelButtons() {
+    var button1 = document.getElementById('level1');
+    var button2 = document.getElementById('level2');
+    var button3 = document.getElementById('level3');
+    var button4 = document.getElementById('level4');
+    switch (localStorage.getItem('currentLevelEx1')) {
+        case '0':
+            button1.style.backgroundColor = '';
+            button1.style.color = '';
+            button2.style.backgroundColor = '';
+            button2.style.color = '';
+            button3.style.backgroundColor = '';
+            button3.style.color = '';
+            button4.style.backgroundColor = '';
+            button4.style.color = '';
+            break;
+        case '1':
+            button1.style.backgroundColor = '#ffffff';
+            button1.style.color = '#59B99D';
+            button2.style.backgroundColor = '';
+            button2.style.color = '';
+            button3.style.backgroundColor = '';
+            button3.style.color = '';
+            button4.style.backgroundColor = '';
+            button4.style.color = '';
+            break;
+        case '2':
+            button1.style.backgroundColor = '';
+            button1.style.color = '';
+            button2.style.backgroundColor = '#ffffff';
+            button2.style.color = '#59B99D';
+            button3.style.backgroundColor = '';
+            button3.style.color = '';
+            button4.style.backgroundColor = '';
+            button4.style.color = '';
+            break;
+        case '3':
+            button1.style.backgroundColor = '';
+            button1.style.color = '';
+            button2.style.backgroundColor = '';
+            button2.style.color = '';
+            button3.style.backgroundColor = '#ffffff';
+            button3.style.color = '#59B99D';
+            button4.style.backgroundColor = '';
+            button4.style.color = '';
+            break;
+        case '4':
+            button1.style.backgroundColor = '';
+            button1.style.color = '';
+            button2.style.backgroundColor = '';
+            button2.style.color = '';
+            button3.style.backgroundColor = '';
+            button3.style.color = '';
+            button4.style.backgroundColor = '#ffffff';
+            button4.style.color = '#59B99D';
+            break;
+        }
+}
+
 function onloadSettings() {
     var isChecked;
     var isTrue;
+    updateLevelButtons();
     currentHTMLFile = 'Settings';
     document.getElementById('tone_length_slider').value = localStorage.getItem('toneLengthEx1');
     document.getElementById('tone_length_input_field').value = document.getElementById('tone_length_slider').value;
@@ -138,6 +198,8 @@ function toneLengthSliderInput() {
     var input = document.getElementById('tone_length_slider').value;
     document.getElementById('tone_length_input_field').value = input;
     localStorage.setItem('toneLengthEx1', input);
+    localStorage.setItem('currentLevelEx1', 0);
+    updateLevelButtons();
 }
 
 function toneLengthFieldInput(min, max) {
@@ -145,6 +207,8 @@ function toneLengthFieldInput(min, max) {
     if ((input >= min) && (input <= max)) {
         document.getElementById('tone_length_slider').value = input;
         localStorage.setItem('toneLengthEx1', input);
+        localStorage.setItem('currentLevelEx1', 0);
+        updateLevelButtons();
     } else {
         document.getElementById('tone_length_input_field').value = localStorage.getItem('toneLengthEx1');
         alert('please enter a value between '+min+' and '+max);
@@ -155,6 +219,8 @@ function pauseLengthSliderInput() {
     var input = document.getElementById('pause_length_slider').value;
     document.getElementById('pause_length_input_field').value = input;
     localStorage.setItem('pauseLengthEx1', input);
+    localStorage.setItem('currentLevelEx1', 0);
+    updateLevelButtons();
 }
 
 function pauseLengthFieldInput(min, max) {
@@ -162,6 +228,8 @@ function pauseLengthFieldInput(min, max) {
     if ((input >= min) && (input <= max)) {
         document.getElementById('pause_length_slider').value = input;
         localStorage.setItem('pauseLengthEx1', input);
+        localStorage.setItem('currentLevelEx1', 0);
+        updateLevelButtons();
     } else {
         document.getElementById('pause_length_input_field').value = localStorage.getItem('pauseLengthEx1');
         alert('please enter a value between '+min+' and '+max);
@@ -170,27 +238,33 @@ function pauseLengthFieldInput(min, max) {
 
 function equalTonesCheckboxInput() {
     localStorage.setItem('equalTonesEx1', document.getElementById('checkbox_equal_tones').checked);
+    localStorage.setItem('currentLevelEx1', 0);
+    updateLevelButtons();
 }
 
 function dropdownIntervalSizeInput() {
     localStorage.setItem('intervalSizeEx1', document.getElementById('dropdown_interval_size').value);
+    localStorage.setItem('currentLevelEx1', 0);
+    updateLevelButtons();
 }
 
 function dropdownWaveformInput() {
     localStorage.setItem('waveformEx1', document.getElementById('dropdown_waveform').value);
 }
 
-function levelButton(pToneLength, pPauseLength, pEqualTones, pIntervalSize) {
+function levelButton(pToneLength, pPauseLength, pEqualTones, pIntervalSize, plevel) {
     localStorage.setItem('toneLengthEx1', pToneLength);
     localStorage.setItem('pauseLengthEx1', pPauseLength);
     localStorage.setItem('equalTonesEx1', pEqualTones);
     localStorage.setItem('intervalSizeEx1', pIntervalSize);
+    localStorage.setItem('currentLevelEx1', plevel);
     document.getElementById('tone_length_slider').value = pToneLength;
     document.getElementById('tone_length_input_field').value = pToneLength;
     document.getElementById('pause_length_slider').value = pPauseLength;
     document.getElementById('pause_length_input_field').value = pPauseLength;
     document.getElementById('checkbox_equal_tones').checked = pEqualTones;
     document.getElementById('dropdown_interval_size').value = pIntervalSize;
+    updateLevelButtons();
 }
 
 // answer buttons

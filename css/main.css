@@ -225,9 +225,6 @@ html {
     html {
         background-color: #282b30;
     }
-    #settings_img, #info_img {
-        filter: invert(1);
-    }
 }
 
 /* desktop */
