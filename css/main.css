@@ -1,4 +1,12 @@
 /* sitewide */
+:root {
+    --cyan: #59B99D;
+    --cyan_dark: #47af91;
+    --pink: #E1387F;
+    --light_grey: #e6e6e6;
+    --darkmode_background: #282b30;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -20,7 +28,7 @@ html {
 .grid_box {
     justify-content: center;
     align-items: center;
-    background-color: #59B99D;
+    background-color: var(--cyan);
     color: white;
 }
 
@@ -91,7 +99,7 @@ html {
 
 .menu_button, .menu_button_active {
     color: white;
-    background-color: #59B99D;
+    background-color: var(--cyan);
     border: 4px solid white;
     border-radius: 15px;
     width: 40%;
@@ -99,7 +107,6 @@ html {
     min-width: 300px;
     margin: 15px;
     font-size: 20px;
-    cursor: pointer;
 }
 
 /* exercises */
@@ -129,9 +136,9 @@ html {
 }
 
 .button {
-    border: 2px solid #ffffff;
-    color: #ffffff;
-    background-color: #59B99D;
+    border: 2px solid white;
+    color: white;
+    background-color: var(--cyan);
     padding: 5px;
     border-radius: 10px;
     width: 15%;
@@ -193,10 +200,15 @@ input[type='range'] {
     height: 5px;
     border-radius: 2px;
     background-color: white;
+    box-shadow: inset 1px 1px 3px rgba(0,0,0,0.6);
 }
 
 input[type='range']::-webkit-slider-thumb {
-
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    background: var(--pink);
 }
 
 
@@ -221,7 +233,7 @@ input[type='range']::-webkit-slider-thumb {
 }
 
 a {
-    color: #E45C9C;
+    color: var(--pink);
 }
 
 
@@ -238,25 +250,26 @@ a {
 /* darkmode */
 @media (prefers-color-scheme: dark) {
     #left_box, #right_box {
-        background-color: #282b30;
+        background-color: var(--darkmode_background);
     }
     html {
-        background-color: #282b30;
+        background-color: var(--darkmode_background);
     }
 }
 
 /* desktop */
 @media (pointer: fine) {
     .button:hover {
-        color: #59B99D;
-        background-color: #ffffff;
+        color: var(--cyan);
+        background-color: white;
     }
     .button:active {
-        color: #59B99D;
-        background-color: #e6e6e6;
-        border: #e6e6e6;
+        color: var(--cyan);
+        background-color: var(--light_grey);
+        border: var(--light_grey);
     }
     .menu_button_active:hover {
-        background-color: #47af91;
+        background-color: var(--cyan_dark);
+        cursor: pointer;
     }
 }
