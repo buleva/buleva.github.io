@@ -89,26 +89,17 @@ html {
     justify-content: space-evenly;
 }
 
-.menu_exercise_box {
-    position: relative;
-    text-align: center;
-    border: solid 4px black;
+.menu_button, .menu_button_active {
+    color: white;
+    background-color: #59B99D;
+    border: 4px solid white;
     border-radius: 15px;
     width: 40%;
     height: 20%;
     min-width: 300px;
-    min-height: 150px;
     margin: 15px;
     font-size: 20px;
-}
-
-.div_link {
-    position: absolute; 
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1;
+    cursor: pointer;
 }
 
 /* exercises */
@@ -147,6 +138,7 @@ html {
     height: 20%;
     min-width: 50px;
     min-height: 30px;
+    cursor: pointer;
 }
 
 /* settings */
@@ -188,9 +180,25 @@ html {
     text-align: center;
 }
 
-.slider {
-    width: 90%; 
+input[type='number'], select{
+    border: 1px solid grey;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 15px;
 }
+
+input[type='range'] {
+    appearance: none;
+    width: 100%;
+    height: 5px;
+    border-radius: 2px;
+    background-color: white;
+}
+
+input[type='range']::-webkit-slider-thumb {
+
+}
+
 
 /* info */
 #container_info {
@@ -204,6 +212,16 @@ html {
 #info_box {
     display: flex;
     grid-area: info;
+}
+
+.text_box {
+    font-size: 20px;
+    margin-right: 10%;
+    margin-left: 10%;
+}
+
+a {
+    color: #E45C9C;
 }
 
 
@@ -234,7 +252,11 @@ html {
         background-color: #ffffff;
     }
     .button:active {
+        color: #59B99D;
         background-color: #e6e6e6;
         border: #e6e6e6;
+    }
+    .menu_button_active:hover {
+        background-color: #47af91;
     }
 }
