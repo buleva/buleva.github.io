@@ -23,6 +23,10 @@ function onloadSettingsMenu() {
     isChecked = localStorage.getItem('soundeffects');
     isTrue = isChecked == 'true';
     document.getElementById('checkbox_soundeffects').checked = isTrue;
+    var x = document.getElementById('volume_slider').value/document.getElementById('volume_slider').max;
+    x = x*100;
+    var color = 'linear-gradient(90deg, var(--pink) '+x+'%, white '+x+'%)'
+    document.getElementById('volume_slider').style.background = color;
 }
 
 function onloadInfo() {
@@ -115,6 +119,10 @@ function volumeSliderInput() {
     var input = document.getElementById('volume_slider').value;
     document.getElementById('volume_input_field').value = input;
     localStorage.setItem('volume', input);
+    var x = input/document.getElementById('volume_slider').max;
+    x = x*100;
+    var color = 'linear-gradient(90deg, var(--pink) '+x+'%, white '+x+'%)'
+    document.getElementById('volume_slider').style.background = color;
 }
 
 function volumeFieldInput(min, max) {

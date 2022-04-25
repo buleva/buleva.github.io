@@ -199,7 +199,7 @@ input[type='range'] {
     width: 100%;
     height: 5px;
     border-radius: 2px;
-    background-color: white;
+    background: linear-gradient(90deg, var(--pink) 60%, white 60%);
     box-shadow: inset 1px 1px 3px rgba(0,0,0,0.6);
 }
 
@@ -222,17 +222,6 @@ input[type='range']::-webkit-slider-thumb {
     margin: 10px;
 }
 
-.checkbox:after {
-    content: "";
-    width: 60px;
-    height: 28px;
-    display: inline-block;
-    background: lightgrey;
-    border-radius: 18px;
-    clear: both;
-    box-shadow: inset 1px 1px 3px rgba(0,0,0,0.6);
-}
-
 .checkbox:before {
     content: "";
     width: 32px;
@@ -246,6 +235,17 @@ input[type='range']::-webkit-slider-thumb {
     box-shadow: 1px 1px 3px rgba(0,0,0,0.6);
 }
 
+.checkbox:after {
+    content: "";
+    width: 60px;
+    height: 28px;
+    display: inline-block;
+    background: lightgrey;
+    border-radius: 18px;
+    clear: both;
+    box-shadow: inset 1px 1px 3px rgba(0,0,0,0.6);
+}
+
 .checkbox:checked:before {
     left: 32px;
     box-shadow: 1px 1px 3px rgba(0,0,0,0.6);
@@ -254,7 +254,7 @@ input[type='range']::-webkit-slider-thumb {
 
 .checkbox:checked:after {
     background: var(--pink);
-    box-shadow: inset 1px 1px 3px rgba(0,0,0,0.6);
+    box-shadow: inset 1px 1px 3px rgba(0,0,0,0.4);
 }
 
 

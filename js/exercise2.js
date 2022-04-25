@@ -97,6 +97,14 @@ function onloadSettings() {
     document.getElementById('checkbox_soundeffects').checked = isTrue;
     document.getElementById('dropdown_interval_size').value = localStorage.getItem('intervalSizeEx2');
     document.getElementById('dropdown_waveform').value = localStorage.getItem('waveformEx2');
+    var x = document.getElementById('tone_length_slider').value/document.getElementById('tone_length_slider').max;
+    x = x*100;
+    var color = 'linear-gradient(90deg, var(--pink) '+x+'%, white '+x+'%)'
+    document.getElementById('tone_length_slider').style.background = color;
+    var x = document.getElementById('volume_slider').value/document.getElementById('volume_slider').max;
+    x = x*100;
+    var color = 'linear-gradient(90deg, var(--pink) '+x+'%, white '+x+'%)'
+    document.getElementById('volume_slider').style.background = color;
 }
 
 
@@ -184,6 +192,10 @@ function toneLengthSliderInput() {
     localStorage.setItem('toneLengthEx2', input);
     localStorage.setItem('currentLevelEx2', 0);
     updateLevelButtons();
+    var x = input/document.getElementById('tone_length_slider').max;
+    x = x*100;
+    var color = 'linear-gradient(90deg, var(--pink) '+x+'%, white '+x+'%)'
+    document.getElementById('tone_length_slider').style.background = color;
 }
 
 function toneLengthFieldInput(min, max) {

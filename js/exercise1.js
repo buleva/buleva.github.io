@@ -100,6 +100,18 @@ function onloadSettings() {
     document.getElementById('checkbox_soundeffects').checked = isTrue;
     document.getElementById('dropdown_interval_size').value = localStorage.getItem('intervalSizeEx1');
     document.getElementById('dropdown_waveform').value = localStorage.getItem('waveformEx1');
+    var x = document.getElementById('tone_length_slider').value/document.getElementById('tone_length_slider').max;
+    x = x*100;
+    var color = 'linear-gradient(90deg, var(--pink) '+x+'%, white '+x+'%)'
+    document.getElementById('tone_length_slider').style.background = color;
+    var x = document.getElementById('pause_length_slider').value/document.getElementById('pause_length_slider').max;
+    x = x*100;
+    var color = 'linear-gradient(90deg, var(--pink) '+x+'%, white '+x+'%)'
+    document.getElementById('pause_length_slider').style.background = color;
+    var x = document.getElementById('volume_slider').value/document.getElementById('volume_slider').max;
+    x = x*100;
+    var color = 'linear-gradient(90deg, var(--pink) '+x+'%, white '+x+'%)'
+    document.getElementById('volume_slider').style.background = color;
 }
 
 //TODO put in script.js 
@@ -200,6 +212,10 @@ function toneLengthSliderInput() {
     localStorage.setItem('toneLengthEx1', input);
     localStorage.setItem('currentLevelEx1', 0);
     updateLevelButtons();
+    var x = input/document.getElementById('tone_length_slider').max;
+    x = x*100;
+    var color = 'linear-gradient(90deg, var(--pink) '+x+'%, white '+x+'%)'
+    document.getElementById('tone_length_slider').style.background = color;
 }
 
 function toneLengthFieldInput(min, max) {
@@ -221,6 +237,10 @@ function pauseLengthSliderInput() {
     localStorage.setItem('pauseLengthEx1', input);
     localStorage.setItem('currentLevelEx1', 0);
     updateLevelButtons();
+    var x = input/document.getElementById('pause_length_slider').max;
+    x = x*100;
+    var color = 'linear-gradient(90deg, var(--pink) '+x+'%, white '+x+'%)'
+    document.getElementById('pause_length_slider').style.background = color;
 }
 
 function pauseLengthFieldInput(min, max) {
