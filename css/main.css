@@ -230,6 +230,7 @@ input[type='range']::-webkit-slider-thumb {
     background: lightgrey;
     border-radius: 18px;
     clear: both;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.6);
 }
 
 .checkbox:before {
@@ -252,6 +253,7 @@ input[type='range']::-webkit-slider-thumb {
 
 .checkbox:checked:after {
     background: var(--pink);
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.6);
 }
 
 
