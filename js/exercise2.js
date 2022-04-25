@@ -237,6 +237,10 @@ function levelButton(pToneLength, pEqualTones, pIntervalSize, plevel) {
     document.getElementById('checkbox_equal_tones').checked = pEqualTones;
     document.getElementById('dropdown_interval_size').value = pIntervalSize;
     updateLevelButtons();
+    var x = document.getElementById('tone_length_slider').value/document.getElementById('tone_length_slider').max;
+    x = x*100;
+    var color = 'linear-gradient(90deg, var(--pink) '+x+'%, white '+x+'%)'
+    document.getElementById('tone_length_slider').style.background = color;
 }
 
 // answer buttons
