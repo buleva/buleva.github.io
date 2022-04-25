@@ -230,7 +230,7 @@ input[type='range']::-webkit-slider-thumb {
     background: lightgrey;
     border-radius: 18px;
     clear: both;
-    box-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+    box-shadow: inset 1px 1px 3px rgba(0,0,0,0.6);
 }
 
 .checkbox:before {
@@ -242,18 +242,19 @@ input[type='range']::-webkit-slider-thumb {
     left: 0;
     top: -2px;
     border-radius: 50%;
-    background: rgb(255, 255, 255);
+    background: white;
     box-shadow: 1px 1px 3px rgba(0,0,0,0.6);
 }
 
 .checkbox:checked:before {
     left: 32px;
     box-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+
 }
 
 .checkbox:checked:after {
     background: var(--pink);
-    box-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+    box-shadow: inset 1px 1px 3px rgba(0,0,0,0.6);
 }
 
 
