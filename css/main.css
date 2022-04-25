@@ -207,7 +207,50 @@ input[type='range']::-webkit-slider-thumb {
     appearance: none;
     width: 15px;
     height: 15px;
-    border-radius: 100%;
+    border-radius: 50%;
+    background: var(--pink);
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+}
+
+.checkbox {
+    appearance: none;
+    -webkit-tap-highlight-color: transparent;
+    position: relative;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.checkbox:after {
+    content: "";
+    width: 60px;
+    height: 28px;
+    display: inline-block;
+    background: lightgrey;
+    border-radius: 18px;
+    clear: both;
+}
+
+.checkbox:before {
+    content: "";
+    width: 32px;
+    height: 32px;
+    display: block;
+    position: absolute;
+    left: 0;
+    top: -2px;
+    border-radius: 50%;
+    background: rgb(255, 255, 255);
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+}
+
+.checkbox:checked:before {
+    left: 32px;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+}
+
+.checkbox:checked:after {
     background: var(--pink);
 }
 

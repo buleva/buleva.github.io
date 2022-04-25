@@ -24,20 +24,20 @@
                 <div class='settings_element_box'>
                     <p>length of the notes: </p>
                     <input id='tone_length_input_field' type="number" inputmode='decimal' pattern="\d*" min="0.1" max="3" step="0.1" onchange="toneLengthFieldInput(0.1, 3)">
-                    <input class='slider' id='tone_length_slider' type='range' min='0.1' max='3' step='0.1' oninput='toneLengthSliderInput()'>
+                    <input id='tone_length_slider' type='range' min='0.1' max='3' step='0.1' oninput='toneLengthSliderInput()'>
                 </div>
                 <div class='settings_element_box'>
                     <p>volume: </p>
                     <input id='volume_input_field' type="number" inputmode='numeric' pattern="\d*" min="0" max="100" step="1" onchange="volumeFieldInput(0, 100)">
-                    <input class='slider' id='volume_slider' type='range' min='0' max='100' step='1' oninput='volumeSliderInput()'>
+                    <input id='volume_slider' type='range' min='0' max='100' step='1' oninput='volumeSliderInput()'>
                 </div>
                 <div class='settings_element_box'>
                     <p>notes can be the same</p>
-                    <input id='checkbox_equal_tones' type="checkbox" oninput='equalTonesCheckboxInput()'>
+                    <input class='checkbox' id='checkbox_equal_tones' type="checkbox" oninput='equalTonesCheckboxInput()'>
                 </div>
                 <div class='settings_element_box'>
                     <p>play soundeffects</p>
-                    <input id='checkbox_soundeffects' type="checkbox" oninput='soundeffectCheckboxInput()'>
+                    <input class='checkbox' id='checkbox_soundeffects' type="checkbox" oninput='soundeffectCheckboxInput()'>
                 </div>
                 <div class='settings_element_box'>
                     <p>tone difference</p>
