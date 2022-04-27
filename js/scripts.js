@@ -10,6 +10,29 @@ var soundeffectWrong = new Audio('../sounds/wrong.wav');
 
 //TODO error when volume at zero
 
+function updateSlider(slider_id, value) {
+    var slider = document.getElementById(slider_id);
+    slider.value = value;
+    var x = slider.value/slider.max;
+    x = x*100;
+    var color = 'linear-gradient(90deg, var(--pink) '+x+'%, white '+x+'%)';
+    slider.style.background = color;
+}
+
+function updateCheckbox(checkbox_id, checked) {
+    var checkbox = document.getElementById(checkbox_id);
+    checkbox.checked = checked;
+}
+
+//TODO update buttons
+function updateButton(button_id, design) {
+    if (design=='active') {
+
+    } else {
+        
+    }
+}
+
 // onload functions
 function onloadMenu() {
     currentHTMLFile = 'Menu';
@@ -18,15 +41,11 @@ function onloadMenu() {
 function onloadSettingsMenu() {
     var isTrue;
     var isChecked;
-    document.getElementById('volume_slider').value = localStorage.getItem('volume');
     document.getElementById('volume_input_field').value = localStorage.getItem('volume');
     isChecked = localStorage.getItem('soundeffects');
     isTrue = isChecked == 'true';
     document.getElementById('checkbox_soundeffects').checked = isTrue;
-    var x = document.getElementById('volume_slider').value/document.getElementById('volume_slider').max;
-    x = x*100;
-    var color = 'linear-gradient(90deg, var(--pink) '+x+'%, white '+x+'%)'
-    document.getElementById('volume_slider').style.background = color;
+    updateSlider('volume_slider', localStorage.getItem('volume'));
 }
 
 function onloadInfo() {
@@ -119,16 +138,13 @@ function volumeSliderInput() {
     var input = document.getElementById('volume_slider').value;
     document.getElementById('volume_input_field').value = input;
     localStorage.setItem('volume', input);
-    var x = input/document.getElementById('volume_slider').max;
-    x = x*100;
-    var color = 'linear-gradient(90deg, var(--pink) '+x+'%, white '+x+'%)'
-    document.getElementById('volume_slider').style.background = color;
+    updateSlider('volume_slider', input);
 }
 
 function volumeFieldInput(min, max) {
     var input = document.getElementById('volume_input_field').value;
     if ((input >= min) && (input <= max)) {
-        document.getElementById('volume_slider').value = input;
+        updateSlider('volume_slider', input);
         localStorage.setItem('volume', input);
     } else {
         document.getElementById('volume_input_field').value = localStorage.getItem('volume');

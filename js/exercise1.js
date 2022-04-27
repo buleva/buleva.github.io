@@ -86,35 +86,22 @@ function onloadSettings() {
     var isTrue;
     updateLevelButtons();
     currentHTMLFile = 'Settings';
-    document.getElementById('tone_length_slider').value = localStorage.getItem('toneLengthEx1');
+    updateSlider('tone_length_slider', localStorage.getItem('toneLengthEx1'));
     document.getElementById('tone_length_input_field').value = document.getElementById('tone_length_slider').value;
-    document.getElementById('pause_length_slider').value = localStorage.getItem('pauseLengthEx1');
+    updateSlider('pause_length_slider', localStorage.getItem('pauseLengthEx1'));
     document.getElementById('pause_length_input_field').value = document.getElementById('pause_length_slider').value;
-    document.getElementById('volume_slider').value = localStorage.getItem('volume');
+    updateSlider('volume_slider', localStorage.getItem('volume'));
     document.getElementById('volume_input_field').value = localStorage.getItem('volume');
     isChecked = localStorage.getItem('equalTonesEx1');
     isTrue = isChecked == 'true';
-    document.getElementById('checkbox_equal_tones').checked = isTrue;
+    updateCheckbox('checkbox_equal_tones', isTrue);
     isChecked = localStorage.getItem('soundeffects');
     isTrue = isChecked == 'true';
-    document.getElementById('checkbox_soundeffects').checked = isTrue;
+    updateCheckbox('checkbox_soundeffects', isTrue);
     document.getElementById('dropdown_interval_size').value = localStorage.getItem('intervalSizeEx1');
     document.getElementById('dropdown_waveform').value = localStorage.getItem('waveformEx1');
-    var x = document.getElementById('tone_length_slider').value/document.getElementById('tone_length_slider').max;
-    x = x*100;
-    var color = 'linear-gradient(90deg, var(--pink) '+x+'%, white '+x+'%)'
-    document.getElementById('tone_length_slider').style.background = color;
-    var x = document.getElementById('pause_length_slider').value/document.getElementById('pause_length_slider').max;
-    x = x*100;
-    var color = 'linear-gradient(90deg, var(--pink) '+x+'%, white '+x+'%)'
-    document.getElementById('pause_length_slider').style.background = color;
-    var x = document.getElementById('volume_slider').value/document.getElementById('volume_slider').max;
-    x = x*100;
-    var color = 'linear-gradient(90deg, var(--pink) '+x+'%, white '+x+'%)'
-    document.getElementById('volume_slider').style.background = color;
 }
 
-//TODO put in script.js 
 function playExercise1(freq, type, start, stop, fadeInTime, fadeOutTime) {
     const osc = audioContext.createOscillator();
     const gainNode = audioContext.createGain();
@@ -212,16 +199,13 @@ function toneLengthSliderInput() {
     localStorage.setItem('toneLengthEx1', input);
     localStorage.setItem('currentLevelEx1', 0);
     updateLevelButtons();
-    var x = input/document.getElementById('tone_length_slider').max;
-    x = x*100;
-    var color = 'linear-gradient(90deg, var(--pink) '+x+'%, white '+x+'%)'
-    document.getElementById('tone_length_slider').style.background = color;
+    updateSlider('tone_length_slider', input);
 }
 
 function toneLengthFieldInput(min, max) {
     var input = document.getElementById('tone_length_input_field').value;
     if ((input >= min) && (input <= max)) {
-        document.getElementById('tone_length_slider').value = input;
+        updateSlider('tone_length_slider', input);
         localStorage.setItem('toneLengthEx1', input);
         localStorage.setItem('currentLevelEx1', 0);
         updateLevelButtons();
@@ -237,16 +221,13 @@ function pauseLengthSliderInput() {
     localStorage.setItem('pauseLengthEx1', input);
     localStorage.setItem('currentLevelEx1', 0);
     updateLevelButtons();
-    var x = input/document.getElementById('pause_length_slider').max;
-    x = x*100;
-    var color = 'linear-gradient(90deg, var(--pink) '+x+'%, white '+x+'%)'
-    document.getElementById('pause_length_slider').style.background = color;
+    updateSlider('pause_length_slider', input);
 }
 
 function pauseLengthFieldInput(min, max) {
     var input = document.getElementById('pause_length_input_field').value;
     if ((input >= min) && (input <= max)) {
-        document.getElementById('pause_length_slider').value = input;
+        updateSlider('pause_length_slider', input);
         localStorage.setItem('pauseLengthEx1', input);
         localStorage.setItem('currentLevelEx1', 0);
         updateLevelButtons();
@@ -282,21 +263,14 @@ function levelButton(pToneLength, pPauseLength, pEqualTones, pIntervalSize, plev
     document.getElementById('tone_length_input_field').value = pToneLength;
     document.getElementById('pause_length_slider').value = pPauseLength;
     document.getElementById('pause_length_input_field').value = pPauseLength;
-    document.getElementById('checkbox_equal_tones').checked = pEqualTones;
     document.getElementById('dropdown_interval_size').value = pIntervalSize;
     updateLevelButtons();
-    var x = document.getElementById('tone_length_slider').value/document.getElementById('tone_length_slider').max;
-    x = x*100;
-    var color = 'linear-gradient(90deg, var(--pink) '+x+'%, white '+x+'%)'
-    document.getElementById('tone_length_slider').style.background = color;
-    var x = document.getElementById('pause_length_slider').value/document.getElementById('pause_length_slider').max;
-    x = x*100;
-    var color = 'linear-gradient(90deg, var(--pink) '+x+'%, white '+x+'%)'
-    document.getElementById('pause_length_slider').style.background = color;
+    updateSlider('tone_length_slider', pToneLength);
+    updateSlider('pause_length_slider', pPauseLength);
+    updateCheckbox('checkbox_equal_tones', pEqualTones);
 }
 
 // answer buttons
-
 function higher() {
     if (!answerGiven) {
         if (firstToneEx1 < secondToneEx1) {
