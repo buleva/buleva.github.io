@@ -24,13 +24,25 @@ function updateCheckbox(checkbox_id, checked) {
     checkbox.checked = checked;
 }
 
-//TODO update buttons
 function updateButton(button_id, design) {
+    button = document.getElementById(button_id);
     if (design=='active') {
-
+        button.style.backgroundColor = 'white';
+        button.style.color = 'var(--cyan)';
     } else {
-        
+        button.style.backgroundColor = '';
+        button.style.color = '';
     }
+}
+
+function updateInputField(input_id, value) {
+    input = document.getElementById(input_id);
+    input.value = value;
+}
+
+function updateDropdown(dropdown_id, value) {
+    dropdown = document.getElementById(dropdown_id);
+    dropdown.value = value;
 }
 
 // onload functions
@@ -41,11 +53,11 @@ function onloadMenu() {
 function onloadSettingsMenu() {
     var isTrue;
     var isChecked;
-    document.getElementById('volume_input_field').value = localStorage.getItem('volume');
     isChecked = localStorage.getItem('soundeffects');
     isTrue = isChecked == 'true';
-    document.getElementById('checkbox_soundeffects').checked = isTrue;
+    updateCheckbox('checkbox_soundeffects', isTrue);
     updateSlider('volume_slider', localStorage.getItem('volume'));
+    updateInputField('volume_input_field', localStorage.getItem('volume'));
 }
 
 function onloadInfo() {
@@ -136,9 +148,9 @@ function playCorrectSoundeffect() {
 // settings
 function volumeSliderInput() {
     var input = document.getElementById('volume_slider').value;
-    document.getElementById('volume_input_field').value = input;
     localStorage.setItem('volume', input);
     updateSlider('volume_slider', input);
+    updateInputField('volume_input_field', input);
 }
 
 function volumeFieldInput(min, max) {
@@ -147,7 +159,7 @@ function volumeFieldInput(min, max) {
         updateSlider('volume_slider', input);
         localStorage.setItem('volume', input);
     } else {
-        document.getElementById('volume_input_field').value = localStorage.getItem('volume');
+        updateInputField('volume_input_field', localStorage.getItem('volume'));
         alert('please enter a value between '+min+' and '+max);
     }
 }
