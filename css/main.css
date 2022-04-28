@@ -201,6 +201,7 @@ input[type='number'], select{
     min-width: 50px;
     min-height: 20px;
     border-radius: 3px;
+    color: black;
 }
 
 input[type='range'] {
