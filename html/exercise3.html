@@ -5,6 +5,7 @@
         <link href="../css/main.css" rel='stylesheet'>
         <script src='../js/scripts.js'></script>
         <script src="../js/exercise3.js"></script>
+        <link rel="icon" type="image/x-icon" href="../pictures/icon.png">
     </head>
     <body>
         <div class='grid_container' id='container_exercise2'>
@@ -17,9 +18,10 @@
             <div class='grid_box' id='feedback_box'><img id='feedback_img'/></div>
             <div class='grid_box' id='button_box'>
                 <button class='button' onclick="play()">play</button>
-                <button class='button' onclick='record()'>record</button>
-                <button class="button" onclick="stop()">stop</button>
+                <button class='button' id='btnRecord'>record</button>
+                <button class="button" id='btnStop'>stop</button>
                 <button class='button' id='playbackButton' onclick='playback()'>playback</button>
+                <audio id="audio" type="audio/mpeg"></audio>
             </div>
             <div class='grid_box' id='right_box'></div>
             <div class='grid_box' id='footer_box'></div>

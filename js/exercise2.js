@@ -74,23 +74,25 @@ function onloadSettings() {
     updateDropdown('dropdown_waveform', localStorage.getItem('waveformEx2'));
 }
 
-
 function playExercise2(freq1, freq2, type, start, stop, fadeInTime, fadeOutTime) {
-    const osc = audioContext.createOscillator();
-    const gainNode = audioContext.createGain();
-    let outputGain;
-    outputGain = localStorage.getItem('volume')/100;
-    osc.connect(gainNode).connect(audioContext.destination);
-    osc.frequency.value = freq1;
-    osc.type = type;
-    gainNode.gain.value = 0.001;
-    osc.start(audioContext.currentTime + start);
-    gainNode.gain.linearRampToValueAtTime(0.001, audioContext.currentTime + start);
-    gainNode.gain.exponentialRampToValueAtTime(outputGain, audioContext.currentTime + start + fadeInTime);
-    osc.frequency.linearRampToValueAtTime(freq2, audioContext.currentTime + stop - fadeOutTime)
-    gainNode.gain.linearRampToValueAtTime(outputGain, audioContext.currentTime + stop - fadeOutTime)
-    gainNode.gain.exponentialRampToValueAtTime(0.001, audioContext.currentTime + stop);
-    osc.stop(audioContext.currentTime + stop);
+    var volume = localStorage.getItem('volume');
+    if (volume > 0) {
+        const osc = audioContext.createOscillator();
+        const gainNode = audioContext.createGain();
+        let outputGain;
+        outputGain = localStorage.getItem('volume')/100;
+        osc.connect(gainNode).connect(audioContext.destination);
+        osc.frequency.value = freq1;
+        osc.type = type;
+        gainNode.gain.value = 0.001;
+        osc.start(audioContext.currentTime + start);
+        gainNode.gain.linearRampToValueAtTime(0.001, audioContext.currentTime + start);
+        gainNode.gain.exponentialRampToValueAtTime(outputGain, audioContext.currentTime + start + fadeInTime);
+        osc.frequency.linearRampToValueAtTime(freq2, audioContext.currentTime + stop - fadeOutTime)
+        gainNode.gain.linearRampToValueAtTime(outputGain, audioContext.currentTime + stop - fadeOutTime)
+        gainNode.gain.exponentialRampToValueAtTime(0.001, audioContext.currentTime + stop);
+        osc.stop(audioContext.currentTime + stop);
+    }
 }  
 
 function nextExercise2() {

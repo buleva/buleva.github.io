@@ -1,4 +1,31 @@
 var mediaRecorder;
+var dataArray = [];
+
+navigator.mediaDevices.getUserMedia({audio:true})
+    .then(function (mediaStreamObj) {
+        let start = document.getElementById('btnRecord');
+        let stop = document.getElementById('btnStop');
+        let mediaRecorder = new MediaRecorder(mediaStreamObj);
+        start.addEventListener('click', function (ev) {
+            mediaRecorder.start();
+        })
+        stop.addEventListener('click', function (ev) {
+            mediaRecorder.stop();
+        });
+        mediaRecorder.ondataavailable = function (ev) {
+            dataArray.push(ev.data);
+        }
+        let dataArray = [];
+        mediaRecorder.onstop = function (ev) {
+            let audioData = new Blob(dataArray, {'type': 'audio/mp3;'});
+            dataArray = [];
+            let audioSrc = window.URL.createObjectURL(audioData);
+            document.getElementById('audio').src = audioSrc;
+        }
+    })
+    .catch(function (err) {
+        console.log(err.name, err.message);
+    });
 
 function play() {
     if (lastClick <= Date.now()-buttonDelay) {
@@ -8,32 +35,8 @@ function play() {
     }
 }
 
-function record() {
-    if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-        console.log('getUserMedia supported');
-        navigator.mediaDevices.getUserMedia({audio:true})
-            .then(function(stream) {
-                mediaRecorder = new MediaRecorder(stream);
-                mediaRecorder.start();
-            })
-            .catch(function(err) {
-                console.log('The following getUserMedia error occurred: '+err);
-            });
-    } else {
-        console.log('getUserMedia not supported on your browser');
-    }
-}
-
-function stop() {
-    mediaRecorder.stop();
-    const blob = new Blob(chunks, {'type':'audio/ogg; codecs=opus'});
-    var chunks = [];
-    const audioURL = window.URL.createObjectURL(blob);
-    audio.src = audioURL;
-}
-
 function playback() {
-
+    document.getElementById('audio').play();
 }
 
 function playExercise3(freq, type, start, stop, fadeInTime, fadeOutTime) {
