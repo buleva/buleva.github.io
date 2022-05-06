@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/main.css" rel='stylesheet'>
+        <script src='js/scripts.js'></script>
+        <link rel="icon" type="image/x-icon" href="/pictures/icon.png">
+    </head>
+    <body onload='onloadMenu()'>
+        <div class='grid_container' id='container_menu'>
+            <div class='grid_box' id='header_box'>
+                <a href='html/settings_menu.html'><img class='nav_img' id='settings_img' src='pictures/gear_invert.png' alt='settings'/></a>
+                <a href='html/info_menu.html'><img class='nav_img' id='info_img' src='pictures/info_invert.png' alt='info'/></a>
+                <img id='logo_img' src='pictures/pitch_logo.png' alt='pitch_logo'/>
+            </div>
+            <div class='grid_box' id='left_box'></div>
+            <div class='grid_box' id='menu_box'>
+                <button class="menu_button menu_button_active" onclick="window.location.href='html/exercise1.html'">two notes</button>
+                <button class="menu_button menu_button_active" onclick="window.location.href='html/exercise2.html'">pitch slides</button>
+                <input id='email_input' type="email"></input>
+                <button id="email_form_submit">submit</button>
+            </div>
+            <div class='grid_box' id='right_box'></div>
+            <div class='grid_box' id='footer_box'></div>
+        </div>
+    </body>
+</html>
