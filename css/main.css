@@ -110,6 +110,30 @@ html {
     font-family: 'Lucida Console', 'Courier New', monospace;
 }
 
+#email_input {
+    width: 70%;
+    height: 4%;
+    min-width: 200px;
+    min-height: 30px;
+    border: solid 2px black;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+#email_form_submit {
+    width: 10%;
+    height: 4%;
+    min-width: 70px;
+    min-height: 30px;
+    background-color: var(--pink);
+    color: white;
+    border: solid 2px white;
+    border-radius: 5px;
+    font-family: 'Lucida Console', 'Courier New', monospace;
+    cursor: pointer;
+    box-shadow: none;
+}
+
 /* exercises */
 #container_exercise1, #container_exercise2 {
     grid-template-areas: 
@@ -158,6 +182,14 @@ html {
         'left settings right'
         'left footer right';
         grid-template-rows: 2fr 2fr 4fr 1fr;
+}
+
+#container_settings_exercise3 {
+    grid-template-areas: 
+        'left header right'
+        'left settings right'
+        'left footer right';
+        grid-template-rows: 2fr 6fr 1fr;
 }
 
 #container_settings_menu {
@@ -220,6 +252,16 @@ input[type='range']::-webkit-slider-thumb {
     width: 15px;
     height: 15px;
     border-radius: 50%;
+    background: var(--pink);
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+}
+
+input[type='range']::-moz-range-thumb {
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: none;
     background: var(--pink);
     box-shadow: 1px 1px 3px rgba(0,0,0,0.6);
 }
@@ -338,6 +380,12 @@ a {
     .menu_button_active:hover {
         background-color: var(--cyan_dark);
         cursor: pointer;
+    }
+    .menu_button_active:active {
+        box-shadow: inset 1px 1px 3px rgba(0,0,0,0.6);
+    }
+    #email_form_submit:active {
+        box-shadow: inset 1px 1px 3px rgba(0,0,0,0.6);
     }
 }
 

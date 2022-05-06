@@ -124,6 +124,10 @@ function loadDefaults() {
     if (!localStorage.getItem('waveformEx2')) {
         localStorage.setItem('waveformEx2', 'sine');
     }
+    // exercise 3
+    if (!localStorage.getItem('currentNoteEx3')) {
+        localStorage.setItem('currentNoteEx3', 'c4');
+    }   
 }
 
 function showCorrectAnswer(firstTone, secondTone) {
