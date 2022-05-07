@@ -1,7 +1,6 @@
 /* sitewide */
 :root {
     --cyan: #59B99D;
-    --cyan_dark: #47af91;
     --pink: #E1387F;
     --light_grey: #e6e6e6;
     --darkmode_background: #282b30;
@@ -377,11 +376,10 @@ a {
         background-color: var(--light_grey);
         border: var(--light_grey);
     }
-    .menu_button_active:hover {
-        background-color: var(--cyan_dark);
+    .menu_button:hover {
         cursor: pointer;
     }
-    .menu_button_active:active {
+    .menu_button:active {
         box-shadow: inset 1px 1px 3px rgba(0,0,0,0.6);
     }
     #email_form_submit:active {
