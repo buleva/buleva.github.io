@@ -20,7 +20,7 @@ function emailSubmit() {
         Subject: 'new user',
         Body: document.getElementById('email_input').value,
     }).then(
-        console.log('success')
+        alert('sign up successful')
     )
 }
 
