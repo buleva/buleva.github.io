@@ -4,6 +4,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="css/main.css" rel='stylesheet'>
         <script src='js/scripts.js'></script>
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
         <link rel="icon" type="image/x-icon" href="/pictures/icon.png">
     </head>
     <body onload='onloadMenu()'>
@@ -18,7 +19,7 @@
                 <button class="menu_button" onclick="window.location.href='html/exercise1.html'">two notes</button>
                 <button class="menu_button" onclick="window.location.href='html/exercise2.html'">pitch slides</button>
                 <input id='email_input' type="email"></input>
-                <button id="email_form_submit">submit</button>
+                <button id="email_form_submit" onclick="emailSubmit()">submit</button>
             </div>
             <div class='grid_box' id='right_box'></div>
             <div class='grid_box' id='footer_box'></div>

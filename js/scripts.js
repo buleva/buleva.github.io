@@ -10,6 +10,20 @@ var soundeffectWrong = new Audio('../sounds/wrong.wav');
 
 //TODO error when volume at zero
 
+function emailSubmit() {
+    Email.send({
+        Host: 'smtp.web.de',
+        Username: 'singonpitch@web.de',
+        Password: '3SZg3ijtz&RSzLZ83#Dnd9m#V',
+        To: 'singonpitch@web.de',
+        From: 'singonpitch@web.de',
+        Subject: 'new user',
+        Body: document.getElementById('email_input').value,
+    }).then(
+        console.log('success')
+    )
+}
+
 function updateSlider(slider_id, value) {
     var slider = document.getElementById(slider_id);
     slider.value = value;
