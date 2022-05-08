@@ -11,6 +11,9 @@ var soundeffectWrong = new Audio('../sounds/wrong.wav');
 //TODO error when volume at zero
 
 function emailSubmit() {
+    input = document.getElementById('email_input');
+    const regEx = new RegExp('[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$');
+    if (regEx.test(input.value)) { 
     Email.send({
         Host: 'smtp.web.de',
         Username: 'singonpitch@web.de',
@@ -18,10 +21,13 @@ function emailSubmit() {
         To: 'singonpitch@web.de',
         From: 'singonpitch@web.de',
         Subject: 'new user',
-        Body: document.getElementById('email_input').value,
+        Body: input.value,
     }).then(
+        input.value = '',
         alert('sign up successful')
-    )
+    )} else {
+        alert('please enter a valid email-adress');
+    }
 }
 
 function updateSlider(slider_id, value) {

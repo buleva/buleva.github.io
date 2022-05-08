@@ -12,6 +12,10 @@
     padding: 0;
 }
 
+*:focus {
+    outline-color: var(--pink);
+}
+
 html {
     background-color: white;
 }
