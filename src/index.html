@@ -17,16 +17,16 @@
       get App
     </button>
   </div>
-  <div class="border-solid border-black border-2 flex justify-center"><!--app mock up box-->
-    <img src="./images/frame black.png" alt="phone frame" class="resize z-10 w-[400px] h-auto"><!--phone frame-->
-    <div class="w-[400px] h-[700px] bg-cyan flex flex-col"><!--phone screen-->
+  <div class="border-solid border-black border-2 flex justify-center items-center"><!--app mock up box-->
+    <img src="./images/frame black.png" alt="phone frame" class="resize w-[393.33px] h-auto z-10"><!--phone frame-->
+    <div class="w-[332.33px] h-[720px] bg-cyan flex flex-col absolute"><!--phone screen-->
       <div class="text-pink"><!--header(phone)-->
         <p class="float-left">< Back</p>
-        <img src="./images/settings.png" alt="settings" class="resize w-[30px] h-auto float-right">
+        <img src="./images/gearshape.circle.png" alt="settings" class="resize w-[30px] h-auto float-right">
       </div>
       <p class="text-white font-bold">Two Notes</p><!--Text(phone)-->
-      <div class="w-[300px] h-[300px] flex justify-center"><img id='feedback_img'/></div><!--feedback icon-->
-      <div class="flex justify-around"><!--buttons-->
+      <div class="h-[300px] w-auto flex justify-center"><img id='feedback_img' class="object-scale-down"/></div><!--feedback icon-->
+      <div class="flex justify-around z-20"><!--buttons-->
         <button class="px-2 py-2 border-solid border-2 border-white rounded-[10px] text-white active:opacity-60" onclick="repeat()">repeat</button>
         <button class="px-2 py-2 border-solid border-2 border-white rounded-[10px] text-white active:opacity-60" onclick='lower()'>lower</button>
         <button class="px-2 py-2 border-solid border-2 border-white rounded-[10px] text-white active:opacity-60" onclick='higher()'>higher</button>

@@ -64,7 +64,7 @@ function repeat() {
 function higher() {
     if (!answerGiven) {
         if (firstTone < secondTone) {
-            document.getElementById('feedback_img').src = './images/correct.png';
+            document.getElementById('feedback_img').src = './images/checkmark.png';
             soundeffectCorrect.play();
         } else {
             showCorrectAnswer(firstTone, secondTone);
@@ -76,7 +76,7 @@ function higher() {
 function lower() {
     if (!answerGiven) {
         if (firstTone > secondTone) {
-            document.getElementById('feedback_img').src = './images/correct.png';
+            document.getElementById('feedback_img').src = './images/checkmark.png';
             soundeffectCorrect.play();
         } else {
             showCorrectAnswer(firstTone, secondTone);
@@ -95,9 +95,9 @@ function getRndFromArray(Array) {
 
 function showCorrectAnswer(firstTone, secondTone) {
     if (firstTone > secondTone) {
-        document.getElementById('feedback_img').src = './images/lower.png';
+        document.getElementById('feedback_img').src = './images/arrow.down.png';
     } else {
-        document.getElementById('feedback_img').src = './images/higher.png';
+        document.getElementById('feedback_img').src = './images/arrow.up.png';
     }
     soundeffectWrong.play();
 }
