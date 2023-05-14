@@ -45,7 +45,7 @@ function next() {
     }
 }
 
-function repeat() {
+function again() {
     if (lastClick <= Date.now()-buttonDelay) {
         if (localStorage.getItem('firstTone') == '') {localStorage.setItem('firstTone', 250)}
         if (localStorage.getItem('secondTone') == '') {localStorage.setItem('secondTone', 242.675)}

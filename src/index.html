@@ -8,7 +8,7 @@
 </head>
 <body>
   <div class="border-solid border-black border-2 flex items-center justify-between"><!--header box-->
-    <img src="./images/pitch_appicon copy.png" alt="app icon" class="resize w-[200px] h-auto rounded-[25px]">
+    <img src="./images/pitch_appicon copy.png" alt="app icon" class="resize w-[150px] h-auto rounded-[25px]">
     <div class="flex items-center">
       <h1>sing on</h1>
       <img src="./images/pitch_logo_green.png" alt="Pitch" class="resize">
@@ -17,39 +17,35 @@
       get App
     </button>
   </div>
-  <div class="border-solid border-black border-2 flex justify-center items-center"><!--app mock up box-->
+  <div class="flex justify-center items-center"><!--app mock up box-->
     <img src="./images/frame black.png" alt="phone frame" class="resize w-[393.33px] h-auto z-10"><!--phone frame-->
-    <div class="w-[333px] h-[720px] bg-cyan flex flex-col absolute"><!--phone screen-->
-      <div class="text-pink"><!--header(phone)-->
-        <p class="float-left">< Back</p>
-        <img src="./images/gearshape.circle.png" alt="settings" class="resize w-[30px] h-auto float-right">
-      </div>
-      <p class="text-white font-bold">Two Notes</p><!--Text(phone)-->
-      <div class="h-[200px] w-auto flex justify-center"><img id='feedback_img' class="object-scale-down"/></div><!--feedback icon-->
-      <div class="flex justify-around z-20"><!--buttons-->
-        <button class="px-2 py-2 border-solid border-2 border-white rounded-[10px] text-white active:opacity-60" onclick="repeat()">repeat</button>
-        <button class="px-2 py-2 border-solid border-2 border-white rounded-[10px] text-white active:opacity-60" onclick='lower()'>lower</button>
-        <button class="px-2 py-2 border-solid border-2 border-white rounded-[10px] text-white active:opacity-60" onclick='higher()'>higher</button>
-        <button class="px-2 py-2 border-solid border-2 border-white rounded-[10px] text-white active:opacity-60" onclick='next()'>next</button>
+    <div class="w-[334px] h-[721px] flex flex-col absolute"><!--phone screen-->
+      <img src="./images/screen_background.jpeg" alt="" class="absolute">
+      <div class="h-[200px] w-auto flex justify-center mt-[231px]"><img id='feedback_img' class="object-scale-down z-10"/></div><!--feedback icon-->
+      <div class="flex justify-around z-20 mt-[114px]"><!--buttons-->
+        <button class="px-2 py-1.5 border-solid border-2 border-white rounded-[10px] text-white active:opacity-60" onclick="again()">again</button>
+        <button class="px-2 py-1.5 border-solid border-2 border-white rounded-[10px] text-white active:opacity-60" onclick='lower()'>lower</button>
+        <button class="px-2 py-1.5 border-solid border-2 border-white rounded-[10px] text-white active:opacity-60" onclick='higher()'>higher</button>
+        <button class="px-2 py-1.5 border-solid border-2 border-white rounded-[10px] text-white active:opacity-60" onclick='next()'>next</button>
       </div>
     </div>
   </div>
   <div class="border-solid border-black border-2 flex flex-wrap justify-around"><!--3 circles-->
     <div class="flex flex-col items-center">
-      <div class="w-[100px] h-[100px] bg-gray-200 rounded-full"><img src="./images/circle-icon1.png" alt="circle-icon1" class="mx-auto"></div>
+      <div class="w-[200px] h-[200px] bg-gray-200 rounded-full"><img src="./images/circle-icon1.png" alt="circle-icon1" class="mx-auto"></div>
       <p>train your ear with intonation</p>
     </div>
     <div class="flex flex-col items-center">
-      <div class="w-[100px] h-[100px] bg-gray-200 rounded-full"><img src="./images/circle-icon2.png" alt="circle-icon2" class="mx-auto"></div>
+      <div class="w-[200px] h-[200px] bg-gray-200 rounded-full"><img src="./images/circle-icon2.png" alt="circle-icon2" class="mx-auto"></div>
       <p>lots of custom settings</p>
     </div>
     <div class="flex flex-col items-center">
-      <div class="w-[100px] h-[100px] bg-gray-200 rounded-full"><img src="./images/circle-icon3.png" alt="circle-icon3" class="mx-auto"></div>
+      <div class="w-[200px] h-[200px] bg-gray-200 rounded-full"><img src="./images/circle-icon3.png" alt="circle-icon3" class="mx-auto"></div>
       <p>choose between 2 exercises</p>
     </div>
   </div>
   <div class="w-full border-solid border-black border-2 flex flex-col items-center"><!--bottom get app-->
-    <img src="./images/pitch_appicon copy.png" alt="app icon" class="resize w-[200px] h-auto rounded-[25px]">
+    <img src="./images/pitch_appicon copy.png" alt="app icon" class="resize w-[100px] h-auto rounded-[15px]">
     <p class="font-bold">Get Pitch on the App Store</p>
     <p>hear pitch like never before</p>
     <button class="px-4 py-4 bg-cyan hover:bg-gray-500 active:bg-gray-700 text-white rounded-[10px]" onclick="window.location.href='https://w3docs.com';">get App</button>
