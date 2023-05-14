@@ -604,6 +604,10 @@ video {
   height: 720px;
 }
 
+.h-\[200px\] {
+  height: 200px;
+}
+
 .w-\[200px\] {
   width: 200px;
 }
@@ -670,6 +674,10 @@ video {
 
 .w-auto {
   width: auto;
+}
+
+.w-\[333px\] {
+  width: 333px;
 }
 
 .resize {
