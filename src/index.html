@@ -7,21 +7,23 @@
   <script src='./scripts.js'></script>
 </head>
 <body>
-  <div><!--header box-->
+  <div class="border-solid border-black border-2 flex items-center justify-between"><!--header box-->
     <img src="./images/pitch_appicon copy.png" alt="app icon" class="resize w-[200px] h-auto rounded-[25px]">
-    <h1>sing on</h1>
-    <img src="./images/pitch_logo_green.png" alt="Pitch" class="resize">
-    <button class="px-4 py-4 bg-cyan hover:bg-black active:bg-white text-white rounded-[10px]" onclick="window.location.href='https://w3docs.com';">
+    <div class="flex items-center">
+      <h1>sing on</h1>
+      <img src="./images/pitch_logo_green.png" alt="Pitch" class="resize">
+    </div>
+    <button class="px-4 py-4 bg-cyan hover:bg-gray-500 active:bg-gray-700 text-white rounded-[10px]" onclick="window.location.href='https://w3docs.com';">
       get App
     </button>
   </div>
-  <div><!--app mock up box-->
+  <div class="border-solid border-black border-2 flex justify-center"><!--app mock up box-->
     <div class="w-[400px] h-[700px] bg-cyan"><!--phone-->
       <div class="text-pink"><!--header(phone)-->
-        <div class="float-left">< Back</div>
+        <p class="float-left">< Back</p>
         <img src="./images/settings.png" alt="settings" class="resize w-[30px] h-auto float-right">
       </div>
-      <div class="text-white font-bold">Two Notes</div><!--Text(phone)-->
+      <p class="text-white font-bold">Two Notes</p><!--Text(phone)-->
       <div class="w-[300px] h-[300px]"><img id='feedback_img'/></div><!--feedback icon-->
       <div><!--buttons-->
         <button class="px-2 py-2 border-solid border-2 border-white rounded-[10px] text-white active:opacity-60" onclick="repeat()">repeat</button>
@@ -31,14 +33,29 @@
       </div>
     </div>
   </div>
-  <div><!--3 circles-->
-
+  <div class="border-solid border-black border-2 flex flex-wrap justify-around"><!--3 circles-->
+    <div class="flex flex-col items-center">
+      <div class="w-[100px] h-[100px] bg-gray-200 rounded-full"></div>
+      <p>train your ear with intonation</p>
+    </div>
+    <div class="flex flex-col items-center">
+      <div class="w-[100px] h-[100px] bg-gray-200 rounded-full"></div>
+      <p>lots of custom settings</p>
+    </div>
+    <div class="flex flex-col items-center">
+      <div class="w-[100px] h-[100px] bg-gray-200 rounded-full"></div>
+      <p>choose between 2 exercises</p>
+    </div>
   </div>
-  <div><!--bottom get app-->
-
+  <div class="w-full border-solid border-black border-2 flex flex-col items-center"><!--bottom get app-->
+    <img src="./images/pitch_appicon copy.png" alt="app icon" class="resize w-[200px] h-auto rounded-[25px]">
+    <p class="font-bold">Get Pitch on the App Store</p>
+    <p>hear pitch like never before</p>
+    <button class="px-4 py-4 bg-cyan hover:bg-gray-500 active:bg-gray-700 text-white rounded-[10px]" onclick="window.location.href='https://w3docs.com';">get App</button>
   </div>
-  <div><!--footer box-->
-
-  </div>
+  <div class="bg-gray-500 text-white"><!--footer box-->
+    <a>ToS</a>
+    <a>PP</a>
+    <a>Contact</a>
 </body>
 </html>
