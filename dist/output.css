@@ -776,6 +776,11 @@ video {
   padding-bottom: 5px;
 }
 
+.px-\[5vw\] {
+  padding-left: 5vw;
+  padding-right: 5vw;
+}
+
 .text-center {
   text-align: center;
 }
@@ -847,11 +852,24 @@ video {
   .md\:block {
     display: block;
   }
+
+  .md\:flex-row {
+    flex-direction: row;
+  }
+
+  .md\:px-\[20vw\] {
+    padding-left: 20vw;
+    padding-right: 20vw;
+  }
 }
 
 @media (min-width: 1024px) {
   .lg\:h-\[120px\] {
     height: 120px;
+  }
+
+  .lg\:flex-row {
+    flex-direction: row;
   }
 
   .lg\:text-8xl {
