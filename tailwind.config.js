@@ -9,6 +9,9 @@ module.exports = {
         'cyan-darker': '#2daa85',
         'white': '#ffffff',
         'pink': '#FF387F'
+      },
+      fontFamily: {
+        'damion': ['Damion', 'sans-serif']
       }
     },
   },
