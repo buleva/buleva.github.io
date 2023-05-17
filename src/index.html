@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="../dist/output.css" rel="stylesheet">
+  <link href="/tailwindcss/output.css" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Damion&display=swap" rel="stylesheet">
-  <script src='./scripts.js'></script>
+  <script src='scripts.js'></script>
 </head>
 <body class="dark:bg-stone-950">
   <div class="flex items-center justify-between p-[20px]"><!--header box-->
-    <img src="./images/pitch_appicon copy.png" alt="app icon" class="resize w-[80px] md:w-[120px] lg:w-[160px] h-auto rounded-[12px] md:rounded-[18px] lg:rounded-[24px]">
+    <img src="/images/pitch_appicon copy.png" alt="app icon" class="resize w-[80px] md:w-[120px] lg:w-[160px] h-auto rounded-[12px] md:rounded-[18px] lg:rounded-[24px]">
     <div class="flex items-center">
       <h1 class="font-bold text-5xl lg:text-7xl hidden md:block dark:text-white">sing on</h1>
       <h1 class="font-damion text-7xl lg:text-9xl text-cyan drop-shadow-lg">Pitch</h1>
@@ -21,11 +21,11 @@
     </button>
   </div>
   <div class="flex justify-center items-center my-[50px]"><!--app mock up box-->
-    <img src="./images/frame black.png" alt="phone frame" class="resize w-[393.33px] h-auto z-10 block dark:hidden"><!--phone frame--> <!--TODO: resize phone screen to right size on small screen-->
-    <img src="./images/frame white.png" alt="phone frame" class="resize w-[393.33px] h-auto z-10 hidden dark:block">
+    <img src="/images/frame black.png" alt="phone frame" class="resize w-[393.33px] h-auto z-10 block dark:hidden"><!--phone frame--> <!--TODO: resize phone screen to right size on small screen-->
+    <img src="/images/frame white.png" alt="phone frame" class="resize w-[393.33px] h-auto z-10 hidden dark:block">
     <div class="w-[334px] h-[721px] flex flex-col absolute"><!--phone screen-->
       <img src="./images/screen_background.jpeg" alt="" class="absolute">
-      <div class="h-[200px] w-auto flex justify-center mt-[231px]"><img id='feedback_img' src="./images/try_out_now.png" class="object-scale-down z-10"/></div><!--feedback icon-->
+      <div class="h-[200px] w-auto flex justify-center mt-[231px]"><img id='feedback_img' src="/images/try_out_now.png" class="object-scale-down z-10"/></div><!--feedback icon-->
       <div class="flex justify-around z-20 mt-[114px]"><!--buttons-->
         <button class="px-2 py-1.5 border-solid border-2 border-white rounded-[10px] text-white active:opacity-60" onclick="again()">again</button>
         <button class="px-2 py-1.5 border-solid border-2 border-white rounded-[10px] text-white active:opacity-60" onclick='lower()'>lower</button>
@@ -36,26 +36,26 @@
   </div>
   <div class="flex flex-col lg:flex-row justify-around p-[20px]"><!--3 circles-->
     <div class="flex flex-col items-center">
-      <div class="m-[20px] flex justify-center items-center w-[200px] h-[200px] bg-gray-200 dark:bg-stone-700 rounded-full"><img src="./images/circle-icon1.png" alt="circle-icon1"></div>
+      <div class="m-[20px] flex justify-center items-center w-[200px] h-[200px] bg-gray-200 dark:bg-stone-700 rounded-full"><img src="/images/circle-icon1.png" alt="circle-icon1"></div>
       <p class="text-xl mb-[20px] dark:text-white">train your ear with intonation</p>
     </div>
     <div class="flex flex-col items-center">
-      <div class="m-[20px] flex justify-center items-center w-[200px] h-[200px] bg-gray-200 dark:bg-stone-700 rounded-full"><img src="./images/circle-icon2.png" alt="circle-icon2"></div>
+      <div class="m-[20px] flex justify-center items-center w-[200px] h-[200px] bg-gray-200 dark:bg-stone-700 rounded-full"><img src="/images/circle-icon2.png" alt="circle-icon2"></div>
       <p class="text-xl mb-[20px] dark:text-white">lots of custom settings</p>
     </div>
     <div class="flex flex-col items-center">
-      <div class="m-[20px] flex justify-center items-center w-[200px] h-[200px] bg-gray-200 dark:bg-stone-700 rounded-full"><img src="./images/circle-icon3.png" alt="circle-icon3"></div>
+      <div class="m-[20px] flex justify-center items-center w-[200px] h-[200px] bg-gray-200 dark:bg-stone-700 rounded-full"><img src="/images/circle-icon3.png" alt="circle-icon3"></div>
       <p class="text-xl mb-[20px] dark:text-white">choose between 2 exercises</p>
     </div>
   </div>
   <div class="w-full flex flex-col space-y-[10px] items-center p-[20px] mb-[20px]"><!--bottom get app-->
-    <img src="./images/pitch_appicon copy.png" alt="app icon" class="resize w-[100px] h-auto rounded-[15px]">
+    <img src="/images/pitch_appicon copy.png" alt="app icon" class="resize w-[100px] h-auto rounded-[15px]">
     <p class="font-bold text-xl md:text-3xl dark:text-white">Get Pitch on the App Store</p>
     <p class="text-base md:text-xl dark:text-white">hear pitch like never before</p>
     <button class="py-[5px] px-[15px] bg-cyan hover:bg-cyan-dark active:bg-cyan-darker text-white rounded-[10px] font-bold text-base md:text-xl" onclick="window.location.href='';">get App</button>
   </div>
   <div class="bg-gray-500 dark:bg-stone-800 text-white flex justify-stretch py-[20px] px-[5vw] md:px-[20vw]"><!--footer box-->
-    <div class="text-center w-1/3 p-[10px]"><a href="ToS.html" class="cursor-pointer">Terms of Service</a></div> <!--TODO: insert real links-->
+    <div class="text-center w-1/3 p-[10px]"><a href="/html/ToS.html" class="cursor-pointer">Terms of Service</a></div> <!--TODO: insert real links-->
     <div class="text-center w-1/3 p-[10px]"><a class="cursor-pointer">Privacy Policy</a></div>
     <div class="text-center w-1/3 p-[10px]"><a href="mailto:valentin.buchner@icloud.com" class="cursor-pointer">Contact</a></div>
 </body>
