@@ -10,27 +10,27 @@
   <script src='/scripts.js'></script>
 </head>
 <body class="dark:bg-stone-950">
-  <div class="flex items-center justify-between p-[20px]"><!--header box-->
+  <div class="flex items-center justify-between p-[10px] md:p-[20px]"><!--header box-->
     <img src="/images/pitch_appicon copy.png" alt="app icon" class="resize w-[80px] md:w-[120px] lg:w-[160px] h-auto rounded-[12px] md:rounded-[18px] lg:rounded-[24px]">
     <div class="flex items-center">
       <h1 class="font-bold text-5xl lg:text-7xl hidden md:block dark:text-white">sing on</h1>
       <h1 class="font-damion text-7xl lg:text-9xl text-cyan drop-shadow-lg">Pitch</h1>
     </div>
-    <button class="py-[5px] px-[15px] bg-cyan hover:bg-cyan-dark active:bg-cyan-darker text-white rounded-[10px] font-bold text-base md:text-xl lg:mr-[20px]" onclick="window.location.href='';">
+    <button class="px-[10px] py-[5px] md:px-[15px] bg-cyan hover:bg-cyan-dark active:bg-cyan-darker text-white rounded-[10px] font-bold text-base md:text-xl lg:mr-[20px]" onclick="window.location.href='';">
       get App
     </button>
   </div>
   <div class="flex justify-center items-center my-[50px]"><!--app mock up box-->
-    <img src="/images/frame black.png" alt="phone frame" class="resize w-[393.33px] h-auto z-10 block dark:hidden"><!--phone frame--> <!--TODO: resize phone screen to right size on small screen-->
-    <img src="/images/frame white.png" alt="phone frame" class="resize w-[393.33px] h-auto z-10 hidden dark:block">
-    <div class="w-[334px] h-[721px] flex flex-col absolute"><!--phone screen-->
+    <img src="/images/frame black.png" alt="phone frame" class="resize w-[295px] md:w-[393.33px] h-auto z-10 block dark:hidden"><!--phone frame--> <!--TODO: resize phone screen to right size on small screen-->
+    <img src="/images/frame white.png" alt="phone frame" class="resize w-[295px] md:w-[393.33px] h-auto z-10 hidden dark:block">
+    <div class="w-[250px] md:w-[334px] h-[540px] md:h-[721px] flex flex-col absolute"><!--phone screen-->
       <img src="/images/screen_background.jpeg" alt="" class="absolute">
-      <div class="h-[200px] w-auto flex justify-center mt-[231px]"><img id='feedback_img' src="/images/try_out_now.png" class="object-scale-down z-10"/></div><!--feedback icon-->
-      <div class="flex justify-around z-20 mt-[114px]"><!--buttons-->
-        <button class="px-2 py-1.5 border-solid border-2 border-white rounded-[10px] text-white active:opacity-60" onclick="again()">again</button>
-        <button class="px-2 py-1.5 border-solid border-2 border-white rounded-[10px] text-white active:opacity-60" onclick='lower()'>lower</button>
-        <button class="px-2 py-1.5 border-solid border-2 border-white rounded-[10px] text-white active:opacity-60" onclick='higher()'>higher</button>
-        <button class="px-2 py-1.5 border-solid border-2 border-white rounded-[10px] text-white active:opacity-60" onclick='next()'>next</button>
+      <div class="h-[150px] md:h-[200px] w-auto flex justify-center mt-[173px] md:mt-[231px]"><img id='feedback_img' src="/images/try_out_now.png" class="object-scale-down z-10"/></div><!--feedback icon-->
+      <div class="flex justify-around z-20 mt-[85px] md:mt-[114px]"><!--buttons-->
+        <button class="px-1.5 py-1 md:px-2 md:py-1.5 border-solid border-2 border-white rounded-[10px] text-white active:opacity-60" onclick="again()">again</button>
+        <button class="px-1.5 py-1 md:px-2 md:py-1.5 border-solid border-2 border-white rounded-[10px] text-white active:opacity-60" onclick='lower()'>lower</button>
+        <button class="px-1.5 py-1 md:px-2 md:py-1.5 border-solid border-2 border-white rounded-[10px] text-white active:opacity-60" onclick='higher()'>higher</button>
+        <button class="px-1.5 py-1 md:px-2 md:py-1.5 border-solid border-2 border-white rounded-[10px] text-white active:opacity-60" onclick='next()'>next</button>
       </div>
     </div>
   </div>
