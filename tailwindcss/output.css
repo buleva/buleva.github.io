@@ -623,10 +623,6 @@ video {
   width: 100%;
 }
 
-.w-\[120px\] {
-  width: 120px;
-}
-
 .cursor-pointer {
   cursor: pointer;
 }
@@ -884,6 +880,14 @@ video {
 
   .md\:w-\[393\.33px\] {
     width: 393.33px;
+  }
+
+  .md\:w-\[150px\] {
+    width: 150px;
+  }
+
+  .md\:w-\[200px\] {
+    width: 200px;
   }
 
   .md\:rounded-\[18px\] {
