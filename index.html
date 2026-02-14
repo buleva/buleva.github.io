@@ -43,16 +43,18 @@
     })
     .catch(err => console.error('Tranlation load failed:', err));
 </script>
-  <div class="flex items-center justify-between p-[10px] md:p-[20px]"><!--header box-->
-    <img src="/images/pitch_appicon copy.png" alt="app icon" class="resize w-[80px] md:w-[120px] lg:w-[160px] h-auto rounded-[12px] md:rounded-[18px] lg:rounded-[24px]">
-    <div class="flex items-center">
-      <h1 class="font-bold text-5xl lg:text-7xl hidden md:block dark:text-white">sing on</h1>
-      <h1 class="font-damion text-7xl lg:text-9xl text-cyan drop-shadow-lg">Pitch</h1>
-    </div>
-    <button data-i18n="getApp" class="px-[10px] py-[5px] md:px-[15px] bg-cyan hover:bg-cyan-dark active:bg-cyan-darker text-white rounded-[10px] font-bold text-base md:text-xl lg:mr-[20px]" onclick="window.location.href='https://apps.apple.com/app/id6443449637';">
+<div class="grid grid-cols-3 items-center p-[10px] md:p-[20px]"><!--header box-->
+  <img src="/images/pitch_appicon copy.png" alt="app icon" class="resize w-[80px] md:w-[120px] lg:w-[160px] h-auto rounded-[12px] md:rounded-[18px] lg:rounded-[24px]">
+  <div class="flex justify-center items-center">
+    <h1 class="font-bold text-5xl lg:text-7xl hidden md:block dark:text-white">sing on</h1>
+    <h1 class="font-damion text-7xl lg:text-9xl text-cyan drop-shadow-lg">Pitch</h1>
+  </div>
+  <div class="flex justify-end items-center pr-[20px]">
+    <button data-i18n="getApp" class="px-[10px] py-[5px] md:px-[15px] bg-cyan hover:bg-cyan-dark active:bg-cyan-darker text-white rounded-[10px] font-bold text-base md:text-xl" onclick="window.location.href='https://apps.apple.com/app/id6443449637';">
       get App
     </button>
   </div>
+</div>
   <div class="flex justify-center items-center my-[50px]"><!--app mock up box-->
     <img src="/images/frame black.png" alt="phone frame" class="resize w-[295px] md:w-[393.33px] h-auto z-10 block dark:hidden"><!--phone frame-->
     <img src="/images/frame white.png" alt="phone frame" class="resize w-[295px] md:w-[393.33px] h-auto z-10 hidden dark:block">
