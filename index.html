@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,13 +17,39 @@
   <script src="/script.js"></script>
   </head>
 <body class="dark:bg-stone-950">
+  <script> //used for localization of the website
+  // Detect language
+  const userLang = navigator.language.split('-')[0];
+  const supportedLangs = ['en', 'de'];
+  const lang = supportedLangs.includes(userLang) ? userLang : 'en';
+  // update <html lang="...">
+  document.documentElement.lang = lang;
+  // Load translations
+  fetch(`locales/${lang}.json`)
+    .then(res => res.json())
+    .then(translations => {
+      // Apply translations to elements with data-i18n keys
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        const attr = el.getAttribute('data-i18n-attr');
+        if (translations[key]) {
+          if (attr) { // handle attribute (href, src, alt...)
+            el.setAttribute(attr, translations[key]);
+          } else {
+            el.textContent = translations[key] || el.textContent;
+          }
+        }
+      });
+    })
+    .catch(err => console.error('Tranlation load failed:', err));
+</script>
   <div class="flex items-center justify-between p-[10px] md:p-[20px]"><!--header box-->
     <img src="/images/pitch_appicon copy.png" alt="app icon" class="resize w-[80px] md:w-[120px] lg:w-[160px] h-auto rounded-[12px] md:rounded-[18px] lg:rounded-[24px]">
     <div class="flex items-center">
       <h1 class="font-bold text-5xl lg:text-7xl hidden md:block dark:text-white">sing on</h1>
       <h1 class="font-damion text-7xl lg:text-9xl text-cyan drop-shadow-lg">Pitch</h1>
     </div>
-    <button class="px-[10px] py-[5px] md:px-[15px] bg-cyan hover:bg-cyan-dark active:bg-cyan-darker text-white rounded-[10px] font-bold text-base md:text-xl lg:mr-[20px]" onclick="window.location.href='https://apps.apple.com/app/id6443449637';">
+    <button data-i18n="getApp" class="px-[10px] py-[5px] md:px-[15px] bg-cyan hover:bg-cyan-dark active:bg-cyan-darker text-white rounded-[10px] font-bold text-base md:text-xl lg:mr-[20px]" onclick="window.location.href='https://apps.apple.com/app/id6443449637';">
       get App
     </button>
   </div>
@@ -33,7 +59,7 @@
     <img src="/images/frame_background.png" class="resize w-[295px] md:w-[393.33px] h-auto -z-10 absolute">
     <div class="w-[250px] md:w-[334px] h-[541px] md:h-[721px] flex flex-col absolute"><!--phone screen-->
       <img src="/images/screen_background.jpeg" alt="" class="absolute">
-      <div class="h-[150px] md:h-[200px] w-auto flex justify-center mt-[173px] md:mt-[231px]"><img id='feedback_img' src="/images/try_out_now.png" class="object-scale-down z-10"/></div><!--feedback icon-->
+      <div class="h-[150px] md:h-[200px] w-auto flex justify-center mt-[173px] md:mt-[231px]"><img id='feedback_img' data-i18n="try_out_now_image" data-i18n-attr="src" src="/images/try_out_now.png" class="object-scale-down z-10"/></div><!--feedback icon-->
       <div class="flex justify-evenly z-20 mt-[85px] md:mt-[114px]"><!--buttons-->
         <button class="resize w-[50px] md:w-[67px] h-auto active:opacity-60" onclick="again()"><img src="/images/arrow.counterclockwise.circle.fill.png" alt="again"></button>
         <button class="resize w-[50px] md:w-[67px] h-auto active:opacity-60" onclick="lower()"><img src="/images/arrow.down.circle.fill.png" alt="lower"></button>
@@ -48,32 +74,32 @@
         <img src="/images/circle-icon1-black.png" alt="circle-icon1" class="resize w-[100px] md:w-[150px] h-auto block dark:hidden">
         <img src="/images/circle-icon1-white.png" alt="circle-icon1" class="resize w-[100px] md:w-[150px] h-auto hidden dark:block">
       </div>
-      <p class="text-xl mb-[20px] dark:text-white">train your ear with intonation</p>
+      <p data-i18n="train_ear" class="text-xl mb-[20px] dark:text-white">train your ear with intonation</p>
     </div>
     <div class="flex flex-col items-center">
       <div class="m-[20px] flex justify-center items-center w-[150px] h-[150px] md:w-[200px] md:h-[200px] bg-gray-200 dark:bg-stone-700 rounded-full">
         <img src="/images/circle-icon2-black.png" alt="circle-icon2" class="resize w-[100px] md:w-[150px] h-auto block dark:hidden">
         <img src="/images/circle-icon2-white.png" alt="circle-icon2" class="resize w-[100px] md:w-[150px] h-auto hidden dark:block">
       </div>
-      <p class="text-xl mb-[20px] dark:text-white">lots of custom settings</p>
+      <p data-i18n="custom_settings" class="text-xl mb-[20px] dark:text-white">lots of custom settings</p>
     </div>
     <div class="flex flex-col items-center">
       <div class="m-[20px] flex justify-center items-center w-[150px] h-[150px] md:w-[200px] md:h-[200px] bg-gray-200 dark:bg-stone-700 rounded-full">
         <img src="/images/circle-icon3-black.png" alt="circle-icon3" class="resize w-[100px] md:w-[150px] h-auto block dark:hidden">
         <img src="/images/circle-icon3-white.png" alt="circle-icon3" class="resize w-[100px] md:w-[150px] h-auto hidden dark:block">
       </div>
-      <p class="text-xl mb-[20px] dark:text-white">choose different exercises</p>
+      <p data-i18n="different_exercises" class="text-xl mb-[20px] dark:text-white">choose different exercises</p>
     </div>
   </div>
   <div class="w-full flex flex-col space-y-[10px] items-center p-[20px] mb-[20px]"><!--bottom get app-->
     <img src="/images/pitch_appicon copy.png" alt="app icon" class="resize w-[100px] h-auto rounded-[15px]">
-    <p class="font-bold text-xl md:text-3xl dark:text-white">Get Pitch on the App Store</p>
-    <p class="text-base md:text-xl dark:text-white">hear pitch like never before</p>
-    <button class="py-[5px] px-[15px] bg-cyan hover:bg-cyan-dark active:bg-cyan-darker text-white rounded-[10px] font-bold text-base md:text-xl" onclick="window.location.href='https://apps.apple.com/app/id6443449637';">get App</button>
+    <p data-i18n="get_on_appstore" class="font-bold text-xl md:text-3xl dark:text-white">Get Pitch on the App Store</p>
+    <p data-i18n="hear_pitch" class="text-base md:text-xl dark:text-white">hear pitch like never before</p>
+    <button data-i18n="getApp" class="py-[5px] px-[15px] bg-cyan hover:bg-cyan-dark active:bg-cyan-darker text-white rounded-[10px] font-bold text-base md:text-xl" onclick="window.location.href='https://apps.apple.com/app/id6443449637';">get App</button>
   </div>
   <div class="bg-gray-500 dark:bg-stone-800 text-white flex justify-stretch py-[20px] px-[5vw] md:px-[20vw]"><!--footer box-->
-    <div class="text-center w-1/3 p-[10px]"><a href="/html/ToS.html" class="cursor-pointer">Terms of Service</a></div>
-    <div class="text-center w-1/3 p-[10px]"><a href="/html/PP.html" class="cursor-pointer">Privacy Policy</a></div>
-    <div class="text-center w-1/3 p-[10px]"><a href="mailto:valentin.buchner@proton.me" class="cursor-pointer">Contact</a></div>
+    <div data-i18n="terms_of_service" class="text-center w-1/3 p-[10px]"><a href="/html/ToS.html" class="cursor-pointer">Terms of Service</a></div>
+    <div data-i18n="privacy_policy" class="text-center w-1/3 p-[10px]"><a href="/html/PP.html" class="cursor-pointer">Privacy Policy</a></div>
+    <div data-i18n="contact" class="text-center w-1/3 p-[10px]"><a href="mailto:valentin.buchner@proton.me" class="cursor-pointer">Contact</a></div>
 </body>
 </html>
