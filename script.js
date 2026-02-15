@@ -128,9 +128,14 @@ function applyTranslations(dict) {
   // Alle Elemente mit data-i18n finden
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
-    const txt = dict[key];
-    if (txt !== undefined) {
-      el.textContent = txt;
+    const attr = el.getAttribute('data-i18n-attr');
+    const value = dict[key];
+    if (value !== undefined) {
+        if (attr) {
+            el.setAttribute(attr, value);
+        } else {
+            el.textContent = value;
+        }
     }
   });
 }
