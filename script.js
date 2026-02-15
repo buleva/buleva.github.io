@@ -101,3 +101,56 @@ function showCorrectAnswer(firstTone, secondTone) {
     }
     soundeffectWrong.play();
 }
+
+
+function setLanguage(lang) {
+  // save choice
+  localStorage.setItem('lang', lang);
+  // update label
+  document.getElementById('current-lang').textContent = lang.toUpperCase();
+  // close dropdown
+  document.querySelectorAll('[onclick*="nextElementSibling"]')[0].nextElementSibling.classList.add('hidden');
+}
+
+// Hilfsfunktion: JSON‑Datei für die gewünschte Sprache holen
+async function loadTranslations(lang) {
+  try {
+    const resp = await fetch(`./locales/${lang}.json`);
+    if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+    return await resp.json();               // → Objekt {key: "Übersetzung"}
+  } catch (e) {
+    console.warn(`i18n: konnte ${lang}.json nicht laden`, e);
+    return {};                              // leeres Objekt → keine Änderungen
+  }
+}
+// Übersetzungen im DOM anwenden
+function applyTranslations(dict) {
+  // Alle Elemente mit data-i18n finden
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    const txt = dict[key];
+    if (txt !== undefined) {
+      el.textContent = txt;
+    }
+  });
+}
+// Sprache setzen – speichert, aktualisiert UI & schließt
+async function setLanguage(lang) {
+  // 3.1 Speichern
+  localStorage.setItem('lang', lang);
+
+  // 3.2 Button‑Label aktualisieren
+  document.getElementById('current-lang').textContent = lang.toUpperCase();
+
+  // 3.3 Dropdown schließen
+  document.querySelectorAll('[onclick*="nextElementSibling"]')[0].nextElementSibling.classList.add('hidden');
+
+  // 3.4 Übersetzungen laden & anwenden
+  const dict = await loadTranslations(lang);
+  applyTranslations(dict);
+}
+// Beim Laden der Seite die zuletzt gewählte Sprache aktivieren
+document.addEventListener('DOMContentLoaded', async () => {
+  const saved = localStorage.getItem('lang') || 'en'; // fallback zu Englisch
+  await setLanguage(saved);
+});
