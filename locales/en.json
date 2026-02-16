@@ -8,5 +8,10 @@
   "hear_pitch": "hear pitch like never before",
   "terms_of_service": "Terms of Service",
   "privacy_policy": "Privacy Policy",
-  "contact": "Contact"
+  "contact": "Contact",
+  "download_pitch_free": "Download Pitch<br>for <span class=\"text-cyan\">FREE</span>",
+  "scan_qr_code": "Scan the QR code to download right away:",
+  "or_open_app_store": "OR open your app store to install:",
+  "appstore_download": "/images/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg",
+  "playstore_download": "/images/GetItOnGooglePlay_Badge_Web_color_English.svg"
 }

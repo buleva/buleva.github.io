@@ -18,75 +18,133 @@
   </head>
 <body class="dark:bg-stone-950">
 <div class="grid grid-cols-3 items-center p-[10px] md:p-[20px]"><!--header box-->
-  <img src="/images/pitch_appicon copy.png" alt="app icon" class="resize w-[80px] md:w-[120px] lg:w-[160px] h-auto rounded-[12px] md:rounded-[18px] lg:rounded-[24px]">
+  <img src="/images/pitch_appicon copy.png" alt="app icon"
+    class="resize w-[80px] md:w-[120px] lg:w-[160px] h-auto rounded-[12px] md:rounded-[18px] lg:rounded-[24px]">
   <div class="flex justify-center items-center">
     <h1 class="font-bold text-5xl lg:text-7xl hidden md:block dark:text-white whitespace-nowrap">sing on</h1>
     <h1 class="font-damion text-7xl lg:text-9xl hidden md:block text-cyan drop-shadow-lg">Pitch</h1>
   </div>
   <div class="flex justify-end items-center pr-[20px]">
-    <button data-i18n="getApp" class="px-[10px] py-[5px] md:px-[15px] bg-cyan hover:bg-cyan-dark active:bg-cyan-darker text-white rounded-[10px] font-bold text-base md:text-xl" onclick="window.location.href='https://apps.apple.com/app/id6443449637';">
+    <button data-i18n="getApp"
+      class="px-[10px] py-[5px] md:px-[15px] bg-cyan hover:bg-cyan-dark active:bg-cyan-darker text-white rounded-[10px] font-bold text-base md:text-xl"
+      onclick="redirectToAppStore();">
       get App
     </button>
   </div>
 </div>
-  <div class="flex justify-center items-center my-[50px]"><!--app mock up box-->
-    <img src="/images/frame black.png" alt="phone frame" class="resize w-[295px] md:w-[393.33px] h-auto z-10 block dark:hidden"><!--phone frame-->
-    <img src="/images/frame white.png" alt="phone frame" class="resize w-[295px] md:w-[393.33px] h-auto z-10 hidden dark:block">
-    <img src="/images/frame_background.png" class="resize w-[295px] md:w-[393.33px] h-auto -z-10 absolute">
-    <div class="w-[250px] md:w-[334px] h-[541px] md:h-[721px] flex flex-col absolute"><!--phone screen-->
-      <img src="/images/screen_background.jpeg" alt="" class="absolute">
-      <div class="h-[150px] md:h-[200px] w-auto flex justify-center mt-[173px] md:mt-[231px]"><img id='feedback_img' data-i18n="try_out_now_image" data-i18n-attr="src" src="/images/try_out_now.png" class="object-scale-down z-10"/></div><!--feedback icon-->
-      <div class="flex justify-evenly z-20 mt-[85px] md:mt-[114px]"><!--buttons-->
-        <button class="resize w-[50px] md:w-[67px] h-auto active:opacity-60" onclick="again()"><img src="/images/arrow.counterclockwise.circle.fill.png" alt="again"></button>
-        <button class="resize w-[50px] md:w-[67px] h-auto active:opacity-60" onclick="lower()"><img src="/images/arrow.down.circle.fill.png" alt="lower"></button>
-        <button class="resize w-[50px] md:w-[67px] h-auto active:opacity-60" onclick="higher()"><img src="/images/arrow.up.circle.fill.png" alt="higher"></button>
-        <button class="resize w-[50px] md:w-[67px] h-auto active:opacity-60" onclick="next()"><img src="/images/chevron.right.circle.fill.png" alt="next"></button>
-      </div>
+<div class="flex justify-center items-center my-[50px]"><!--app mock up box-->
+  <img src="/images/frame black.png" alt="phone frame"
+    class="resize w-[295px] md:w-[393.33px] h-auto z-10 block dark:hidden"><!--phone frame-->
+  <img src="/images/frame white.png" alt="phone frame"
+    class="resize w-[295px] md:w-[393.33px] h-auto z-10 hidden dark:block">
+  <img src="/images/frame_background.png" class="resize w-[295px] md:w-[393.33px] h-auto -z-10 absolute">
+  <div class="w-[250px] md:w-[334px] h-[541px] md:h-[721px] flex flex-col absolute"><!--phone screen-->
+    <img src="/images/screen_background.jpeg" alt="" class="absolute">
+    <div class="h-[150px] md:h-[200px] w-auto flex justify-center mt-[173px] md:mt-[231px]"><img id='feedback_img'
+        data-i18n="try_out_now_image" data-i18n-attr="src" src="/images/try_out_now.png"
+        class="object-scale-down z-10" /></div><!--feedback icon-->
+    <div class="flex justify-evenly z-20 mt-[85px] md:mt-[114px]"><!--buttons-->
+      <button class="resize w-[50px] md:w-[67px] h-auto active:opacity-60" onclick="again()"><img
+          src="/images/arrow.counterclockwise.circle.fill.png" alt="again"></button>
+      <button class="resize w-[50px] md:w-[67px] h-auto active:opacity-60" onclick="lower()"><img
+          src="/images/arrow.down.circle.fill.png" alt="lower"></button>
+      <button class="resize w-[50px] md:w-[67px] h-auto active:opacity-60" onclick="higher()"><img
+          src="/images/arrow.up.circle.fill.png" alt="higher"></button>
+      <button class="resize w-[50px] md:w-[67px] h-auto active:opacity-60" onclick="next()"><img
+          src="/images/chevron.right.circle.fill.png" alt="next"></button>
     </div>
   </div>
+</div>
 <div class="grid grid-cols-1 lg:grid-cols-3 p-[20px]"><!--3 circles-->
   <div class="flex flex-col items-center">
-    <div class="m-[20px] flex justify-center items-center w-[150px] h-[150px] md:w-[200px] md:h-[200px] bg-gray-200 dark:bg-stone-700 rounded-full">
-      <img src="/images/circle-icon1-black.png" alt="circle-icon1" class="resize w-[100px] md:w-[150px] h-auto block dark:hidden">
-      <img src="/images/circle-icon1-white.png" alt="circle-icon1" class="resize w-[100px] md:w-[150px] h-auto hidden dark:block">
+    <div
+      class="m-[20px] flex justify-center items-center w-[150px] h-[150px] md:w-[200px] md:h-[200px] bg-gray-200 dark:bg-stone-700 rounded-full">
+      <img src="/images/circle-icon1-black.png" alt="circle-icon1"
+        class="resize w-[100px] md:w-[150px] h-auto block dark:hidden">
+      <img src="/images/circle-icon1-white.png" alt="circle-icon1"
+        class="resize w-[100px] md:w-[150px] h-auto hidden dark:block">
     </div>
     <p data-i18n="train_ear" class="text-xl mb-[20px] dark:text-white text-center">train your ear with intonation</p>
   </div>
   <div class="flex flex-col items-center">
-    <div class="m-[20px] flex justify-center items-center w-[150px] h-[150px] md:w-[200px] md:h-[200px] bg-gray-200 dark:bg-stone-700 rounded-full">
-      <img src="/images/circle-icon2-black.png" alt="circle-icon2" class="resize w-[100px] md:w-[150px] h-auto block dark:hidden">
-      <img src="/images/circle-icon2-white.png" alt="circle-icon2" class="resize w-[100px] md:w-[150px] h-auto hidden dark:block">
+    <div
+      class="m-[20px] flex justify-center items-center w-[150px] h-[150px] md:w-[200px] md:h-[200px] bg-gray-200 dark:bg-stone-700 rounded-full">
+      <img src="/images/circle-icon2-black.png" alt="circle-icon2"
+        class="resize w-[100px] md:w-[150px] h-auto block dark:hidden">
+      <img src="/images/circle-icon2-white.png" alt="circle-icon2"
+        class="resize w-[100px] md:w-[150px] h-auto hidden dark:block">
     </div>
     <p data-i18n="custom_settings" class="text-xl mb-[20px] dark:text-white text-center">lots of custom settings</p>
   </div>
   <div class="flex flex-col items-center">
-    <div class="m-[20px] flex justify-center items-center w-[150px] h-[150px] md:w-[200px] md:h-[200px] bg-gray-200 dark:bg-stone-700 rounded-full">
-      <img src="/images/circle-icon3-black.png" alt="circle-icon3" class="resize w-[100px] md:w-[150px] h-auto block dark:hidden">
-      <img src="/images/circle-icon3-white.png" alt="circle-icon3" class="resize w-[100px] md:w-[150px] h-auto hidden dark:block">
+    <div
+      class="m-[20px] flex justify-center items-center w-[150px] h-[150px] md:w-[200px] md:h-[200px] bg-gray-200 dark:bg-stone-700 rounded-full">
+      <img src="/images/circle-icon3-black.png" alt="circle-icon3"
+        class="resize w-[100px] md:w-[150px] h-auto block dark:hidden">
+      <img src="/images/circle-icon3-white.png" alt="circle-icon3"
+        class="resize w-[100px] md:w-[150px] h-auto hidden dark:block">
     </div>
-    <p data-i18n="different_exercises" class="text-xl mb-[20px] dark:text-white text-center">choose different exercises</p>
+    <p data-i18n="different_exercises" class="text-xl mb-[20px] dark:text-white text-center">choose different exercises
+    </p>
   </div>
 </div>
-  <div class="w-full flex flex-col space-y-[10px] items-center p-[20px] mb-[20px]"><!--bottom get app-->
-    <img src="/images/pitch_appicon copy.png" alt="app icon" class="resize w-[100px] h-auto rounded-[15px]">
-    <p data-i18n="get_on_appstore" class="font-bold text-xl md:text-3xl dark:text-white">Get Pitch on the App Store</p>
-    <p data-i18n="hear_pitch" class="text-base md:text-xl dark:text-white">hear pitch like never before</p>
-    <button data-i18n="getApp" class="py-[5px] px-[15px] bg-cyan hover:bg-cyan-dark active:bg-cyan-darker text-white rounded-[10px] font-bold text-base md:text-xl" onclick="window.location.href='https://apps.apple.com/app/id6443449637';">get App</button>
-  </div>
-  <div class="bg-gray-500 dark:bg-stone-800 text-white flex flex-col md:flex-row items-center justify-between py-[20px] px-[5vw] md:px-[20vw]"><!--footer box-->
-    <div class="flex justify-center p-[10px]"><a data-i18n="terms_of_service" href="/html/ToS.html" class="cursor-pointer">Terms of Service</a></div>
-    <div class="flex justify-center p-[10px]"><a data-i18n="privacy_policy" href="/html/PP.html" class="cursor-pointer">Privacy Policy</a></div>
-    <div class="flex justify-center p-[10px]"><a data-i18n="contact" href="mailto:valentin.buchner@proton.me" class="cursor-pointer">Contact</a></div>
-    <!-- language picker -->
+<div class="w-full flex flex-col space-y-[10px] items-center p-[20px] mb-[20px]"><!--bottom get app-->
+  <img src="/images/pitch_appicon copy.png" alt="app icon" class="resize w-[100px] h-auto rounded-[15px]">
+  <p data-i18n="get_on_appstore" class="font-bold text-xl md:text-3xl dark:text-white">Get Pitch on the App Store</p>
+  <p data-i18n="hear_pitch" class="text-base md:text-xl dark:text-white">hear pitch like never before</p>
+    <button data-i18n="getApp"
+      class="px-[10px] py-[5px] md:px-[15px] bg-cyan hover:bg-cyan-dark active:bg-cyan-darker text-white rounded-[10px] font-bold text-base md:text-xl"
+      onclick="redirectToAppStore();">
+      get App
+    </button>
+</div>
+<div
+  class="bg-gray-500 dark:bg-stone-800 text-white flex flex-col md:flex-row items-center justify-between py-[20px] px-[5vw] md:px-[20vw]">
+  <!--footer box-->
+  <div class="flex justify-center p-[10px]"><a data-i18n="terms_of_service" href="/html/ToS.html"
+      class="cursor-pointer">Terms of Service</a></div>
+  <div class="flex justify-center p-[10px]"><a data-i18n="privacy_policy" href="/html/PP.html"
+      class="cursor-pointer">Privacy Policy</a></div>
+  <div class="flex justify-center p-[10px]"><a data-i18n="contact" href="mailto:valentin.buchner@proton.me"
+      class="cursor-pointer">Contact</a></div>
+  <!-- language picker -->
   <div class="flex justify-center p-[10px] relative">
-    <button onclick="this.nextElementSibling.classList.toggle('hidden')" class="cursor-pointer flex items-center justify-center gap-1 mx-auto">
+    <button onclick="this.nextElementSibling.classList.toggle('hidden')"
+      class="cursor-pointer flex items-center justify-center gap-1 mx-auto">
       🌐 <span id="current-lang">EN</span> ▾
     </button>
-    <div class="hidden absolute bottom-full mb-1 left-1/2 -translate-x-1/2 bg-gray-600 dark:bg-stone-700 rounded-[8px] overflow-hidden shadow-lg">
-      <button onclick="setLanguage('en')" class="block w-full px-[20px] py-[8px] hover:bg-gray-500 dark:hover:bg-stone-600 text-left">🇬🇧 English</button>
-      <button onclick="setLanguage('de')" class="block w-full px-[20px] py-[8px] hover:bg-gray-500 dark:hover:bg-stone-600 text-left">🇩🇪 Deutsch</button>
+    <div
+      class="hidden absolute bottom-full mb-1 left-1/2 -translate-x-1/2 bg-gray-600 dark:bg-stone-700 rounded-[8px] overflow-hidden shadow-lg">
+      <button onclick="setLanguage('en')"
+        class="block w-full px-[20px] py-[8px] hover:bg-gray-500 dark:hover:bg-stone-600 text-left">
+        🇬🇧English
+      </button>
+      <button onclick="setLanguage('de')"
+        class="block w-full px-[20px] py-[8px] hover:bg-gray-500 dark:hover:bg-stone-600 text-left">
+        🇩🇪Deutsch
+      </button>
     </div>
   </div>
+</div>
+<!--QR-Code Overlay-->
+<div id="qr_overlay" class="fixed inset-0 bg-black/80 dark:bg-black/90 z-50 hidden overflow-y-auto py-[20px] px-[20px]" onclick="if(event.target===this) hideQR()">
+  <div class="relative flex flex-col items-center gap-[20px] p-[40px] bg-white dark:bg-stone-900 rounded-[20px] border border-cyan shadow-cyan-glow max-w-[400px] my-auto mx-auto text-center">
+        <button onclick="hideQR()" class="absolute top-[15px] right-[20px] text-black dark:text-white text-2xl font-bold opacity-70 hover:opacity-100">✕</button>
+    <h2 data-i18n="download_pitch_free" class="font-bold text-4xl text-black dark:text-white mt-[10px]">Download Pitch<br>for <span class="text-cyan">FREE</span></h2>
+    <p data-i18n="scan_qr_code" class="text-gray-600 dark:text-gray-300">Scan the QR code to download right away:</p>
+    <div class="bg-white rounded-[15px] p-[15px]">
+      <img src="/images/qr-code_download.svg" alt="QR Code" class="w-[200px] h-[200px]">
+    </div>
+    <p data-i18n="or_open_app_store" class="text-gray-600 dark:text-gray-300">OR open your app store to install:</p>
+    <div class="flex gap-[15px] flex-wrap justify-center">
+      <a href="https://apps.apple.com/app/id6443449637" target="_blank">
+        <img data-i18n="appstore_download" data-i18n-attr="src" src="/images/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="Download on the App Store" class="h-[50px]">
+      </a>
+      <a href="https://play.google.com/store/games" target="_blank">
+        <img data-i18n="playstore_download" data-i18n-attr="src" src="/images/GetItOnGooglePlay_Badge_Web_color_English.svg" alt="Get it on Google Play" class="h-[50px]">
+      </a>
+    </div>
   </div>
+</div>
 </body>
 </html>

@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', async () => {
           if (attr) { // handle attribute (href, src, alt...)
             el.setAttribute(attr, translations[key]);
           } else {
-            el.textContent = translations[key] || el.textContent;
+            el.innerHTML = translations[key] || el.innerHTML;
           }
         }
       });
@@ -179,4 +179,25 @@ function applyTranslations(dict) {
         }
     }
   });
+}
+
+//OS specific link to AppStore / Play Store
+function redirectToAppStore() {
+  const userAgent = navigator.userAgent.toLowerCase();
+  const isiOS = /iphone|ipad|ipod/.test(userAgent);
+  const isAndroid = /android/.test(userAgent);
+
+  if (isiOS) {
+    window.location.href = 'https://www.apple.com/de/app-store/'
+  } else if (isAndroid) {
+    window.location.href = 'https://play.google.com/store/apps?hl=de'
+  } else {
+    document.getElementById('qr_overlay').style.display = 'flex';
+    document.body.style.overflow = 'hidden' //prevent scrolling background
+  }
+}
+
+function hideQR() {
+  document.getElementById('qr_overlay').style.display = 'none';
+  document.body.style.overflow = '' //enable scrolling background
 }

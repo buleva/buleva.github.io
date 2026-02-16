@@ -8,5 +8,10 @@
   "hear_pitch": "Tonhöhen hören wie nie zuvor",
   "terms_of_service": "Nutzungsbedingungen",
   "privacy_policy": "Datenschutzrichtlinie",
-  "contact": "Kontakt"
+  "contact": "Kontakt",
+  "download_pitch_free": "Lade Pitch <br> <span class=\"text-cyan\">kostenlos</span> herunter",
+  "scan_qr_code": "QR-Code scannen und sofort herunterladen:",
+  "or_open_app_store": "oder öffne deinen App Store zur Installation:",
+  "appstore_download": "/images/Download_on_the_App_Store_Badge_DE_RGB_blk_092917.svg",
+  "playstore_download": "/images/GetItOnGooglePlay_Badge_Web_color_German.svg"
 }
