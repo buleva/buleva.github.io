@@ -102,6 +102,33 @@ function showCorrectAnswer(firstTone, secondTone) {
     soundeffectWrong.play();
 }
 
+// Detect language and change it on start
+document.addEventListener('DOMContentLoaded', () => {
+  const userLang = navigator.language.split('-')[0];
+  const supportedLangs = ['en', 'de'];
+  const lang = supportedLangs.includes(userLang) ? userLang : 'en';
+  // update <html lang="...">
+  document.documentElement.lang = lang;
+  // Load translations
+  fetch(`locales/${lang}.json`)
+    .then(res => res.json())
+    .then(translations => {
+      // Apply translations to elements with data-i18n keys
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        const attr = el.getAttribute('data-i18n-attr');
+        if (translations[key]) {
+          if (attr) { // handle attribute (href, src, alt...)
+            el.setAttribute(attr, translations[key]);
+          } else {
+            el.textContent = translations[key] || el.textContent;
+          }
+        }
+      });
+    })
+    .catch(err => console.error('Tranlation load failed:', err));
+});
+
 
 function setLanguage(lang) {
   // save choice
