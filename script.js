@@ -138,6 +138,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   if (dropdown) {
     dropdown.classList.add('hidden');
   }
+})
 
 // Sprache setzen – speichert, aktualisiert UI & schließt
 async function setLanguage(lang) {
