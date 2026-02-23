@@ -151,6 +151,8 @@ async function setLanguage(lang) {
   // 3.4 Übersetzungen laden & anwenden
   const dict = await loadTranslations(lang);
   applyTranslations(dict);
+
+  toggleLangArrow()
 }
 
 // Hilfsfunktion: JSON‑Datei für die gewünschte Sprache holen
@@ -179,6 +181,18 @@ function applyTranslations(dict) {
         }
     }
   });
+}
+
+// toggle the arrow of the language picker when opening/closing
+function toggleLangArrow() {
+  const arrow = document.getElementById('lang-arrow');
+  const dropdown = document.getElementById('lang-dropdown')
+
+  if (dropdown.classList.contains('hidden')) {
+    arrow.textContent = '▾';
+  } else {
+    arrow.textContent = '▴';
+  }
 }
 
 //OS specific link to AppStore / Play Store

@@ -109,11 +109,11 @@
       class="cursor-pointer">Contact</a></div>
   <!-- language picker -->
   <div class="flex justify-center p-[10px] relative">
-    <button onclick="this.nextElementSibling.classList.toggle('hidden')"
+    <button onclick="this.nextElementSibling.classList.toggle('hidden'); toggleLangArrow();"
       class="cursor-pointer flex items-center justify-center gap-1 mx-auto">
-      🌐 <span id="current-lang">EN</span> ▾
+      🌐 <span id="current-lang">EN</span> <span id="lang-arrow">▾</span>
     </button>
-    <div
+    <div id="lang-dropdown"
       class="hidden absolute bottom-full mb-1 left-1/2 -translate-x-1/2 bg-gray-600 dark:bg-stone-700 rounded-[8px] overflow-hidden shadow-lg whitespace-nowrap">
       <button onclick="setLanguage('en')"
         class="block w-full px-[20px] py-[8px] hover:bg-gray-500 dark:hover:bg-stone-600 text-left">
