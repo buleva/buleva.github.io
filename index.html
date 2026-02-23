@@ -38,21 +38,22 @@
   <img src="/images/frame white.png" alt="phone frame"
     class="resize w-[295px] md:w-[393.33px] h-auto z-10 hidden dark:block">
   <img src="/images/frame_background.png" class="resize w-[295px] md:w-[393.33px] h-auto -z-10 absolute">
-  <div class="w-[250px] md:w-[334px] h-[541px] md:h-[721px] flex flex-col absolute"><!--phone screen-->
-    <img src="/images/screen_background.jpeg" alt="" class="absolute">
-    <div class="h-[150px] md:h-[200px] w-auto flex justify-center mt-[173px] md:mt-[231px]"><img id='feedback_img'
+  <div class="w-[250px] md:w-[334px] h-[541px] md:h-[721px] flex flex-col absolute cursor-pointer"><!--phone screen-->
+    <img src="/images/screen_background.jpeg" alt="" class="absolute pointer-events-none">
+    <div class="h-[150px] md:h-[200px] w-auto flex justify-center mt-[173px] md:mt-[231px] pointer-events-none"><img id='feedback_img'
         data-i18n="try_out_now_image" data-i18n-attr="src" src="/images/try_out_now.png"
-        class="object-scale-down z-10" /></div><!--feedback icon-->
-    <div class="flex justify-evenly z-20 mt-[85px] md:mt-[114px]"><!--buttons-->
-      <button class="resize w-[50px] md:w-[67px] h-auto active:opacity-60" onclick="again()"><img
+        class="object-scale-down z-10 pointer-events-none" /></div><!--feedback icon-->
+    <div class="flex justify-evenly z-20 mt-[85px] md:mt-[114px] z-40"><!--buttons-->
+      <button class="resize w-[50px] md:w-[67px] h-auto active:opacity-60" onclick="event.stopPropagation(); again()"><img
           src="/images/arrow.counterclockwise.circle.fill.png" alt="again"></button>
-      <button class="resize w-[50px] md:w-[67px] h-auto active:opacity-60" onclick="lower()"><img
+      <button class="resize w-[50px] md:w-[67px] h-auto active:opacity-60" onclick="event.stopPropagation(); lower()"><img
           src="/images/arrow.down.circle.fill.png" alt="lower"></button>
-      <button class="resize w-[50px] md:w-[67px] h-auto active:opacity-60" onclick="higher()"><img
+      <button class="resize w-[50px] md:w-[67px] h-auto active:opacity-60" onclick="event.stopPropagation(); higher()"><img
           src="/images/arrow.up.circle.fill.png" alt="higher"></button>
-      <button class="resize w-[50px] md:w-[67px] h-auto active:opacity-60" onclick="next()"><img
+      <button class="resize w-[50px] md:w-[67px] h-auto active:opacity-60" onclick="event.stopPropagation(); next()"><img
           src="/images/chevron.right.circle.fill.png" alt="next"></button>
     </div>
+        <div class="absolute inset-0 z-30" onclick="next()"></div>
   </div>
 </div>
 <div class="grid grid-cols-1 lg:grid-cols-3 p-[20px]"><!--3 circles-->
