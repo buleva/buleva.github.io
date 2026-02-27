@@ -202,9 +202,9 @@ function redirectToAppStore() {
   const isAndroid = /android/.test(userAgent);
 
   if (isiOS) {
-    window.location.href = 'https://www.apple.com/de/app-store/'
+    window.location.href = 'https://apps.apple.com/us/app/sing-on-pitch/id6443449637'
   } else if (isAndroid) {
-    window.location.href = 'https://play.google.com/store/apps?hl=de'
+    window.location.href = 'https://play.google.com/store/apps/details?id=com.singonpitch.pitch_android_v1'
   } else {
     document.getElementById('qr_overlay').style.display = 'flex';
     document.body.style.overflow = 'hidden' //prevent scrolling background
