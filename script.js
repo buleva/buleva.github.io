@@ -119,11 +119,12 @@ document.addEventListener('DOMContentLoaded', async () => {
         const key = el.getAttribute('data-i18n');
         const attr = el.getAttribute('data-i18n-attr');
         if (translations[key]) {
-          if (attr) { // handle attribute (href, src, alt...)
-            el.setAttribute(attr, translations[key]);
-          } else {
-            el.innerHTML = translations[key] || el.innerHTML;
-          }
+          el.innerHTML = translations[key] || el.innerHTML;
+        }
+        if (attr) {
+          const hrefKey = key + "_href";
+          const value = translations[hrefKey] !== undefined ? translations[hrefKey] : translations[key];
+          el.setAttribute(attr, value);
         }
       });
   } catch (err) {
@@ -172,13 +173,17 @@ function applyTranslations(dict) {
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
     const attr = el.getAttribute('data-i18n-attr');
-    const value = dict[key];
-    if (value !== undefined) {
-        if (attr) {
-            el.setAttribute(attr, value);
-        } else {
-            el.innerHTML = value;
-        }
+    const hrefKey = el.getAttribute('data-i18n-href-key');
+
+    const textValue = dict[key];
+      if (textValue !== undefined) {
+        el.innerHTML = textValue;
+    }
+    if (attr) {
+      const attrValue = hrefKey ? dict[hrefKey] : dict[key];
+      if (attrValue !== undefined) {
+        el.setAttribute(attr, attrValue);
+      }
     }
   });
 }

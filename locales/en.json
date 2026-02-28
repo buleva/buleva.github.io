@@ -13,5 +13,8 @@
   "scan_qr_code": "Scan the QR code to download right away:",
   "or_open_app_store": "OR open your app store to install:",
   "appstore_download": "/images/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg",
-  "playstore_download": "/images/GetItOnGooglePlay_Badge_Web_color_English.svg"
+  "playstore_download": "/images/GetItOnGooglePlay_Badge_Web_color_English.svg",
+
+  "terms_of_service_href": "/en/terms_of_service.html",
+  "privacy_policy_href": "/en/privacy_policy.html"
 }
