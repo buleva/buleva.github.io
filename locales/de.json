@@ -8,6 +8,7 @@
   "hear_pitch": "Tonhöhen hören wie nie zuvor",
   "terms_of_service": "Nutzungsbedingungen",
   "privacy_policy": "Datenschutzrichtlinie",
+  "impressum": "Impressum",
   "contact": "Kontakt",
   "download_pitch_free": "Lade Pitch <br> <span class=\"text-cyan\">kostenlos</span> herunter",
   "scan_qr_code": "QR-Code scannen und sofort herunterladen:",
@@ -16,5 +17,6 @@
   "playstore_download": "/images/GetItOnGooglePlay_Badge_Web_color_German.svg",
 
   "terms_of_service_href": "/de/nutzungsbedingungen.html",
-  "privacy_policy_href": "/de/datenschutzrichtlinie.html"
+  "privacy_policy_href": "/de/datenschutzrichtlinie.html",
+  "impressum_href": "/de/impressum.html"
 }
