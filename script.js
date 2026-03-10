@@ -1,3 +1,4 @@
+// code for the demo version of the app
 var firstTone;
 var secondTone;
 let toneLength = 0.7;
@@ -102,6 +103,9 @@ function showCorrectAnswer(firstTone, secondTone) {
     soundeffectWrong.play();
 }
 
+
+// Code for the different language support
+
 // Detect language and change it on start
 document.addEventListener('DOMContentLoaded', async () => {
   let lang = localStorage.getItem('lang');
@@ -191,7 +195,7 @@ function applyTranslations(dict) {
 // toggle the arrow of the language picker when opening/closing
 function toggleLangArrow() {
   const arrow = document.getElementById('lang-arrow');
-  const dropdown = document.getElementById('lang-dropdown')
+  const dropdown = document.getElementById('lang-dropdown');
 
   if (dropdown.classList.contains('hidden')) {
     arrow.textContent = '▾';
@@ -199,6 +203,29 @@ function toggleLangArrow() {
     arrow.textContent = '▴';
   }
 }
+
+function closeLangDropdown() {
+  const dropdown = document.getElementById('lang-dropdown');
+      if (dropdown && !dropdown.classList.contains('hidden')) {
+      dropdown.classList.add('hidden');
+      const arrow = document.getElementById('lang-arrow');
+      if(arrow) arrow.innerText = '▾';
+      }
+}
+
+document.addEventListener('click', function(event) {
+  const dropdown = document.getElementById('lang-dropdown');
+  const toggleBtn = document.querySelector('button[onclick*="toggleLangArrow"]');
+
+  if (dropdown.contains(event.target)) {
+    return;
+  }
+  if (toggleBtn && toggleBtn.contains(event.target)) {
+    return;
+  }
+  closeLangDropdown();
+});
+
 
 //OS specific link to AppStore / Play Store
 function redirectToAppStore() {
