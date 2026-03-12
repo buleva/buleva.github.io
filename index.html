@@ -14,6 +14,7 @@
   <link rel="apple-touch-icon-precomposed" href="apple-touch-icon-precomposed.png">
   <!-- Firefox, Chrome, Safari, IE 11+ and Opera. 96x96 pixels in size. -->
   <link rel="icon" href="/images/favicon.png">
+  <script src="config.js"></script>
   <script src="/script.js"></script>
   </head>
 <body class="dark:bg-stone-950">
@@ -140,10 +141,10 @@
     </div>
     <p data-i18n="or_open_app_store" class="text-gray-600 dark:text-gray-300">OR open your app store to install:</p>
     <div class="flex gap-[15px] flex-wrap justify-center">
-      <a href="https://apps.apple.com/us/app/sing-on-pitch/id6443449637" target="_blank">
+      <a data-link="app_store_link" target="_blank">
         <img data-i18n="appstore_download" data-i18n-attr="src" src="/images/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="Download on the App Store" class="h-[50px]">
       </a>
-      <a href="https://play.google.com/store/apps/details?id=com.singonpitch.pitch_android_v1" target="_blank">
+      <a data-link="play_store_link" target="_blank">
         <img data-i18n="playstore_download" data-i18n-attr="src" src="/images/GetItOnGooglePlay_Badge_Web_color_English.svg" alt="Get it on Google Play" class="h-[50px]">
       </a>
     </div>
