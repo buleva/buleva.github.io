@@ -18,5 +18,10 @@
 
   "terms_of_service_href": "/en/terms_of_service.html",
   "privacy_policy_href": "/en/privacy_policy.html",
-  "impressum_href": "/de/impressum.html"
+  "impressum_href": "/de/impressum.html",
+
+  "thank_you": "Thank you!",
+  "successfull": "Your request has been submitted successfully. We will review it as soon as possible and contact you if we have any questions.",
+  "back_to_app": "Back to the app",
+  "to_website": "Go to website"
 }

@@ -18,5 +18,10 @@
 
   "terms_of_service_href": "/de/nutzungsbedingungen.html",
   "privacy_policy_href": "/de/datenschutzrichtlinie.html",
-  "impressum_href": "/de/impressum.html"
+  "impressum_href": "/de/impressum.html",
+
+  "thank_you": "Vielen Dank!",
+  "successfull": "Deine Anfrage wurde erfolgreich übermittelt. Wir schauen uns das so schnell wie möglich an und melden uns bei Rückfragen gerne bei dir.",
+  "back_to_app": "Zurück zur App",
+  "to_website": "Zur Website"
 }

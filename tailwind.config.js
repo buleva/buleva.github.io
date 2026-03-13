@@ -8,7 +8,8 @@ module.exports = {
         'cyan-dark': '#32b991',
         'cyan-darker': '#2daa85',
         'white': '#ffffff',
-        'pink': '#FF387F'
+        'pink': '#FF387F',
+        'dark-gray': '#383838'
       },
       fontFamily: {
         'damion': ['Damion', 'sans-serif']
