@@ -45,13 +45,13 @@
         data-i18n="try_out_now_image" data-i18n-attr="src" src="/images/try_out_now.png"
         class="object-scale-down z-10 pointer-events-none" /></div><!--feedback icon-->
     <div class="flex justify-evenly mt-[85px] md:mt-[114px] z-40"><!--buttons-->
-      <button class="resize w-[50px] md:w-[67px] h-auto active:opacity-60" onclick="event.stopPropagation(); again(); closeLangDropdown()"><img
+      <button class="resize w-[50px] md:w-[67px] h-auto active:opacity-60" ontouchstart="this.style.opacity='0.6'" ontouchend="this.style.opacity='1'" onclick="event.stopPropagation(); again(); closeLangDropdown()"><img
           src="/images/arrow.counterclockwise.circle.fill.png" alt="again"></button>
-      <button class="resize w-[50px] md:w-[67px] h-auto active:opacity-60" onclick="event.stopPropagation(); lower(); closeLangDropdown()"><img
+      <button class="resize w-[50px] md:w-[67px] h-auto active:opacity-60" ontouchstart="this.style.opacity='0.6'" ontouchend="this.style.opacity='1'" onclick="event.stopPropagation(); lower(); closeLangDropdown()"><img
           src="/images/arrow.down.circle.fill.png" alt="lower"></button>
-      <button class="resize w-[50px] md:w-[67px] h-auto active:opacity-60" onclick="event.stopPropagation(); higher(); closeLangDropdown()"><img
+      <button class="resize w-[50px] md:w-[67px] h-auto active:opacity-60" ontouchstart="this.style.opacity='0.6'" ontouchend="this.style.opacity='1'" onclick="event.stopPropagation(); higher(); closeLangDropdown()"><img
           src="/images/arrow.up.circle.fill.png" alt="higher"></button>
-      <button class="resize w-[50px] md:w-[67px] h-auto active:opacity-60" onclick="event.stopPropagation(); next(); closeLangDropdown()"><img
+      <button class="resize w-[50px] md:w-[67px] h-auto active:opacity-60" ontouchstart="this.style.opacity='0.6'" ontouchend="this.style.opacity='1'" onclick="event.stopPropagation(); next(); closeLangDropdown()"><img
           src="/images/chevron.right.circle.fill.png" alt="next"></button>
     </div>
         <div class="absolute inset-0 z-30" onclick="next()"></div>
