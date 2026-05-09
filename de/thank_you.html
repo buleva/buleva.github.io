@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vielen Dank!</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script.js"></script>
+    <link href="/tailwindcss/output.css" rel="stylesheet">
+</head>
+<body class="bg-cyan text antialiased min-h-screen flex items-center justify-center p-4">
+
+    <div class="bg-cyan rounded-2xl shadow-xl max-w-md w-full p-8 text-center border border-gray-100">
+        
+        <div class="mx-auto flex items-center justify-center h-16 w-16 rounded-full bg-white mb-6">
+            <svg class="h-8 w-8 text-dark-gray" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
+            </svg>
+        </div>
+
+        <h1 data-i18n="thank_you" class="text-3xl font-bold text-dark-gray mb-2">
+            Vielen Dank!
+        </h1>
+
+        <p data-i18n="successfull" class="text-gray-600 mb-8 leading-relaxed">
+            Ihre Anfrage wurde erfolgreich übermittelt. Wir werden sie so schnell wie möglich prüfen und uns bei Ihnen melden, falls wir Fragen haben.        </p>
+
+        <div class="space-y-3">
+            <a href="singonpitch://" data-i18n="back_to_app" class="block w-full bg-white hover:bg-opacity-90 text-cyan font-semibold py-3 px-4 rounded-lg transition duration-200 ease-in-out shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan">
+                Zurück zur App
+            </a>
+
+            <a href="/index.html" data-i18n="to_website" class="block w-full text-white font-medium py-2 px-4 transition duration-200 border border-transparent hover:border-gray-200 rounded-lg">
+                Zur Website &rarr;
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>
